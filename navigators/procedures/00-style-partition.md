@@ -2,11 +2,25 @@
 
 ## Purpose
 
-Assign each packet a Suno style such that the packets are evenly spaced over
-the domain of musical styles — no two packets overlap — while never altering
-the style of any packet whose music is already memorized or accepted. The
-partition is re-runnable: when preferences change, only non-committed entries
-are re-derived.
+Assign each grouping a Suno style such that the groupings are evenly spaced
+over the domain of musical styles — no two groupings overlap — while never
+altering the style of any grouping whose music is already memorized or
+accepted. The partition is re-runnable: when preferences change, only
+non-committed entries are re-derived.
+
+## Groupings
+
+A **grouping** is a unit that owns one style:
+
+- The five lettered packets A–E (Part 1 of `packets.md`).
+- The five numbered Series S1–S5 (Part 2 of `packets.md`). Series receive
+  style reservations now so the space stays evenly spread before any packet
+  locks; their lyrics format is deliberately TBD and will be defined by a
+  future procedure.
+
+Songs within a grouping share the grouping's style: a packet split into two
+parts, or a Series eventually split into several songs, is still one
+grouping with one style.
 
 ## Inputs
 
@@ -14,11 +28,12 @@ are re-derived.
   Read this first; it filters the style space below.
 - `navigators/styles.md` — the registry (create it if missing, seeding the
   LOCKED Packet A entry given below).
-- `navigators/extracted/packets.md` — the list of packets to cover.
+- `navigators/extracted/packets.md` — the groupings to cover (Parts 1
+  and 2).
 
 ## Output
 
-- `navigators/styles.md` updated: one entry per packet.
+- `navigators/styles.md` updated: one entry per grouping.
 
 ## Entry statuses
 
@@ -26,7 +41,7 @@ are re-derived.
 |---|---|---|
 | `LOCKED` | Memorization has begun or completed | Never |
 | `ACCEPTED` | Human sampled the music and approved | Never |
-| `PROPOSED` | Derived by this procedure, awaiting sampling | Yes — freely re-derived |
+| `PROPOSED` | Derived by this procedure, awaiting sampling | Yes — see minimal perturbation |
 
 ## Fixed point: Packet A
 
@@ -39,10 +54,11 @@ Its axis coordinates: genre G1, tempo T2 (88 BPM), era E2 (1972), vocal V1.
 
 ## The style space
 
-Four axes. Every packet must occupy a unique band on every axis.
+Four axes.
 
 **Genre family** (filter this list through `style-preferences.md` exclusions
-before assigning; extend it if more bands are needed than remain):
+before assigning; extend it if exclusions shrink it below the grouping
+count):
 
 - G1 Folk / singer-songwriter *(taken by A)*
 - G2 Gospel / soul
@@ -53,51 +69,68 @@ before assigning; extend it if more bands are needed than remain):
 - G7 Jazz / swing
 - G8 Bossa nova / Latin
 - G9 Pop ballad / soft rock
-- G10 Celtic / British Isles folk *(adjacent to G1 — use only if bands run out)*
+- G10 Celtic / British Isles folk *(adjacent to G1 — assign it to the
+  grouping most distant from A on the other axes)*
 
-**Tempo band**: T1 60–74 · T2 75–89 *(taken by A)* · T3 90–104 ·
-T4 105–119 · T5 120–134 BPM. The style string names one specific BPM within
-the band.
+**Tempo band**: T1 60–74 · T2 75–89 *(A)* · T3 90–104 · T4 105–119 ·
+T5 120–134 BPM. The style string names one specific BPM within the band.
 
-**Era / production**: E1 1960s · E2 1970s analog *(taken by A)* · E3 1980s ·
+**Era / production**: E1 1960s · E2 1970s analog *(A)* · E3 1980s ·
 E4 1990s · E5 contemporary.
 
-**Vocal texture**: V1 close harmony *(taken by A)* · V2 solo lead ·
+**Vocal texture**: V1 close harmony *(A)* · V2 solo lead ·
 V3 call-and-response · V4 male-female duet · V5 full choir.
+
+**Spacing rules** (ten groupings over these bands):
+
+1. Every grouping occupies a distinct genre family.
+2. On each of tempo, era, and vocal, a band may be used by at most two
+   groupings.
+3. Any two groupings may share at most ONE band across tempo, era, and
+   vocal combined — so every pair of groupings differs on at least three
+   of the four axes.
 
 ## Steps
 
 1. Read `style-preferences.md`. Remove excluded genre families; note required
    qualities that every style string must express.
 2. Read `styles.md`. Record the axis coordinates of every `LOCKED` and
-   `ACCEPTED` entry; those bands are taken.
-3. For each remaining packet in letter order, assign one free band per axis.
-   Among valid assignments, prefer musically natural combinations (a genre's
-   home tempo and era) and maximal contrast with already-assigned packets.
-4. Compose each style string in this grammar, matching Packet A's shape:
+   `ACCEPTED` entry; those assignments are immovable.
+3. **Minimal perturbation**: keep every existing `PROPOSED` assignment that
+   remains valid under the current constraints and grouping set. Re-derive
+   only entries that must move, and record which moved and why in History.
+   (A generated-but-not-yet-accepted lyrics file embeds its style string;
+   unnecessary churn invalidates it.)
+4. For each unassigned grouping (packets in letter order, then Series in
+   number order), assign bands satisfying the Spacing rules. Among valid
+   assignments, prefer musically natural combinations (a genre's home tempo
+   and era) and maximal contrast with already-assigned groupings.
+5. Compose each style string in this grammar, matching Packet A's shape:
    `{Genre descriptor} - {instrumentation}, {vocal texture},
    {era/production}, {tempo} BPM, {mood}.`
    Express the required qualities from `style-preferences.md` through the
    genre and descriptor choices, not through negative commands (negative
    commands like "no spoken word" have been observed not to work).
-5. Write `styles.md` per the schema below. New entries are `PROPOSED`.
-6. Append a History entry: date, what was assigned or re-derived, and which
-   preference lines drove any change.
-7. Present the resulting registry for human review. Do not commit.
+6. Write `styles.md` per the schema below. New entries are `PROPOSED`.
+7. Append a History entry: date, what was assigned, kept, or re-derived,
+   and which preference lines or constraint changes drove it.
+8. Present the resulting registry for human review. Do not commit.
 
 ## Registry schema (`navigators/styles.md`)
 
 ```markdown
 # Style Registry
 
-| Packet | Status | Style |
+| Grouping | Status | Style |
 |---|---|---|
 | A | LOCKED | Jesus Movement folk - ... |
 | B | PROPOSED | ... |
+| ... | | |
+| S1 | PROPOSED | ... |
 
 ## Axis coordinates
 
-| Packet | Genre | Tempo | Era | Vocal |
+| Grouping | Genre | Tempo | Era | Vocal |
 |---|---|---|---|---|
 
 ## Rationale
@@ -113,9 +146,9 @@ V3 call-and-response · V4 male-female duet · V5 full choir.
 
 When the human rejects a sample or updates `style-preferences.md`: re-run
 this procedure. `LOCKED` and `ACCEPTED` entries are immutable fixed points;
-only `PROPOSED` entries are re-derived, spread over whatever bands remain.
-Record the rejection reason in the History section and ensure
-`style-preferences.md` was updated to capture it.
+`PROPOSED` entries follow minimal perturbation (step 3). Record the
+rejection reason in the History section and ensure `style-preferences.md`
+was updated to capture it.
 
 ## Human Prompts
 
@@ -127,3 +160,8 @@ Record the rejection reason in the History section and ensure
 - fully sung melodic vocals throughout, no spoken word - In my experience this doesn't actually change the outcome of the amount of spoken word so much as the genera of music does. It's hard for me to predict which genres are going to be spoken more. I can share feedback after listening to the music. *(Excerpt; full prompt recorded in `03-lyrics-format.md`.)*
 - I'm okay with this. Let's go ahead
 - Please continue.
+
+#### Document Modification On 2026-08-28
+
+- Do the style partitions cover the entire pdf?
+- I would like to include the other series eventually, however I'm not sure what the best format for converting those sections to song would be just yet.
