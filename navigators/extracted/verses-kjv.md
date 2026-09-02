@@ -127,10 +127,9 @@ Fear thou not; for I am with thee: be not dismayed; for I am thy God: I will str
 
 I can do all things through Christ which strengtheneth me.
 
-### C5 — Lamentations 3:22-23 — FLAGGED
+### C5 — Lamentations 3:22-23 — RESOLVED (human ruling 2026-08-28; see Discrepancies)
 
-- v.22: [FLAGGED — see Discrepancies: C5 v.22]
-- v.23: They are new every morning: great is thy faithfulness.
+It is of the LORD’s mercies that we are not consumed, because his compassions fail not. They are new every morning: great is thy faithfulness.
 
 ### C6 — Numbers 23:19 — AGREE
 
@@ -190,9 +189,9 @@ For consider him that endured such contradiction of sinners against himself, les
 
 For even the Son of man came not to be ministered unto, but to minister, and to give his life a ransom for many.
 
-### D8 — 2 Corinthians 4:5 — FLAGGED
+### D8 — 2 Corinthians 4:5 — RESOLVED (human ruling 2026-08-28; see Discrepancies)
 
-- v.5: [FLAGGED — see Discrepancies: D8 v.5]
+For we preach not ourselves, but Christ Jesus the Lord; and ourselves your servants for Jesus’ sake.
 
 ### D9 — Proverbs 3:9-10 — AGREE
 
@@ -240,9 +239,9 @@ Dearly beloved, I beseech you as strangers and pilgrims, abstain from fleshly lu
 
 Ye shall not steal, neither deal falsely, neither lie one to another.
 
-### E8 — Acts 24:16 — FLAGGED
+### E8 — Acts 24:16 — RESOLVED (human ruling 2026-08-28; see Discrepancies)
 
-- v.16: [FLAGGED — see Discrepancies: E8 v.16]
+And herein do I exercise myself, to have always a conscience void of offence toward God, and toward men.
 
 ### E9 — Hebrews 11:6 — AGREE
 
@@ -1054,6 +1053,11 @@ Therefore we ought to give the more earnest heed to the things which we have hea
 
 ## Discrepancies
 
+Standing rule (human-approved 2026-08-28): punctuation-only discrepancies
+resolve to the majority reading, recorded per entry when the verse is
+needed. Spelling and wording discrepancies each require an individual
+human ruling.
+
 ### A2 — Galatians 2:20 — FLAGGED (spelling)
 
 - gutenberg: I am crucified with Christ: neverthless I live; yet not I, but Christ liveth in me: and the life which I now live in the flesh I live by the faith of the Son of God, who loved me, and gave himself for me.
@@ -1067,6 +1071,7 @@ Therefore we ought to give the more earnest heed to the things which we have hea
 - sacred-texts: It is of the LORD's mercies that we are not consumed, because his compassions fail not.
 - aruljohn: It is of the LORD’s mercies that we are not consumed, because his compassions fail not.
 - Majority: It is of the LORD’s mercies that we are not consumed, because his compassions fail not.
+- Resolution (2026-08-28): majority reading, per human-approved standing rule for punctuation-only discrepancies.
 
 ### D8 — 2 Corinthians 4:5 — FLAGGED (punctuation-only)
 
@@ -1074,6 +1079,7 @@ Therefore we ought to give the more earnest heed to the things which we have hea
 - sacred-texts: For we preach not ourselves, but Christ Jesus the Lord; and ourselves your servants for Jesus' sake.
 - aruljohn: For we preach not ourselves, but Christ Jesus the Lord; and ourselves your servants for Jesus’ sake.
 - Majority: For we preach not ourselves, but Christ Jesus the Lord; and ourselves your servants for Jesus’ sake.
+- Resolution (2026-08-28): majority reading, per human-approved standing rule for punctuation-only discrepancies.
 
 ### E8 — Acts 24:16 — FLAGGED (wording)
 
@@ -1081,6 +1087,7 @@ Therefore we ought to give the more earnest heed to the things which we have hea
 - sacred-texts: And herein do I exercise myself, to have always a conscience void to offence toward God, and toward men.
 - aruljohn: And herein do I exercise myself, to have always a conscience void of offence toward God, and toward men.
 - Majority: And herein do I exercise myself, to have always a conscience void to offence toward God, and toward men.
+- Resolution (2026-08-28): human ruled "void of offence" (the aruljohn/minority reading), rejecting the majority. Gutenberg and sacred-texts share an etext lineage (see also Galatians 2:20 "neverthless"), no printed KJV edition reads "to", and the 1611 and 1769 editions both read "of".
 
 ### 1-7 — John 1:18 — FLAGGED (punctuation-only)
 
