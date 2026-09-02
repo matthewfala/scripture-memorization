@@ -7,8 +7,9 @@ B–E PROPOSED (pending sampling).
 
 | File | Packet | Duration | Notes |
 |---|---|---|---|
-| packet-a-take1.mp3 | A | 5:33 | Suno clip d872abc8-aa15-40b1-8955-1ccb71d30b5f; calibration reference — memorized-take identity to be confirmed by the human |
-| packet-a-take2.mp3 | A | 5:25 | Suno clip d5367c4b-f0c0-4fb0-95f2-12a986465f57; additional A take (more takes exist in the library) |
+| packet-a-memorized.mp3 | A | 5:21 | **OFFICIAL** — Suno clip f3eb752c-a4c6-446a-9e42-8f12dd90a8b2, human-designated memorized take (2026-09-02); calibration reference |
+| packet-a-take1.mp3 | A | 5:33 | Suno clip d872abc8-aa15-40b1-8955-1ccb71d30b5f; non-memorized A take |
+| packet-a-take2.mp3 | A | 5:25 | Suno clip d5367c4b-f0c0-4fb0-95f2-12a986465f57; non-memorized A take |
 | packet-b-take1.mp3 | B | 3:52 | Generated 2026-09-02, v5.5, gospel soul style |
 | packet-b-take2.mp3 | B | 4:08 | Generated 2026-09-02, v5.5, gospel soul style |
 | packet-c-take1.mp3 | C | 5:30 | Generated 2026-09-02, v5.5, eighties ballad style |

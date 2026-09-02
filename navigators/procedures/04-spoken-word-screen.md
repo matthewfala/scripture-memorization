@@ -1,13 +1,20 @@
-# Procedure 04 — Spoken-Word Screening (experimental)
+# Procedure 04 — Song Screening (experimental)
 
 ## Purpose
 
-Estimate how much of a generated song is spoken rather than sung, and flag
-suspect time ranges. Spoken passages memorize far more slowly than sung
-ones, and style-string guard clauses have been observed not to prevent
-them — so generated audio is screened before the human invests listening
-time. This is a heuristic, advisory tool: its flags guide regeneration and
-human listening; the human ear is the final judge.
+Screen generated songs on two dimensions before the human invests
+listening time:
+
+1. **Spoken-word screening** — estimate how much of the song is spoken
+   rather than sung, and flag suspect time ranges. Spoken passages
+   memorize far more slowly than sung ones, and style-string guard clauses
+   have been observed not to prevent them.
+2. **Lyric fidelity** — verify the sung words match the lyrics file
+   exactly. A take that drops, alters, or repeats lines must not become
+   memorized material.
+
+Both are heuristic, advisory tools: flags guide regeneration and human
+listening; the human ear is the final judge.
 
 ## Inputs
 
@@ -28,13 +35,30 @@ directory; dependencies: `librosa`, `numpy`, `soundfile`) that:
 3. Classifies low-melodicity windows as suspect; merges adjacent suspect
    windows into time ranges.
 
+## Lyric fidelity — local transcription
+
+Transcribe the vocal with a locally-run speech-recognition model (e.g.
+Whisper via `faster-whisper` or `mlx-whisper`; never a cloud service).
+Normalize both sides (lowercase; strip punctuation; collapse whitespace;
+spell-out mismatches like "20" vs "twenty" normalized) and align the
+transcript against the file's Lyrics section. Report per-line coverage:
+lines missing, lines altered (with the diff), lines repeated beyond the
+format, and an overall word-error estimate. Transcription of sung vocals
+is imperfect — the report must distinguish "transcriber uncertainty"
+(scattered small errors) from "structural failure" (whole lines missing,
+wrong order, invented text), and only structural failure fails the check.
+
 ## Calibration — required before trusting any flag
 
-Run the screener on the Packet A song first (known memorized, predominantly
-sung). Set the flag threshold so A's known-sung material passes. Report any
-A regions the screener still flags — these are either A's genuinely spoken
-moments or false positives; the human confirms which, and the threshold
-choice is recorded in every report.
+Run both checks on the human's designated memorized Packet A take first
+(`packet-a-memorized.mp3`, Suno clip f3eb752c-a4c6-446a-9e42-8f12dd90a8b2
+— human-confirmed 2026-09-02; predominantly sung, and its v1-format lyrics
+are known). Set the spoken-flag threshold so A's known-sung material
+passes, and note the transcription's baseline word-error rate on A —
+that baseline is the yardstick for "transcriber uncertainty" on B–E.
+Report any A regions still flagged; the human confirms whether they are
+genuinely spoken or false positives. Record the thresholds in every
+report.
 
 ## Output
 
@@ -44,13 +68,28 @@ calibration threshold used, and honest caveats.
 
 ## Decision rule (default; human may override per song)
 
-- Spoken fraction > 10%, or any single suspect range longer than 15 s →
-  regenerate once with the same style string.
-- If the second take also fails → stop; record the observation (genre,
-  what was spoken) in the `style-preferences.md` feedback log, and refer
-  the style to the human for revision (Procedure 00 re-run).
+- A take FAILS if: spoken fraction > 10%, or any single suspect range
+  longer than 15 s, or the lyric-fidelity check shows structural failure
+  (missing/altered/reordered lines beyond transcriber uncertainty).
+- If every take of a generation round fails → regenerate once with the
+  same style string and lyrics.
+- If the second round also produces no passing take → stop; record the
+  observation (genre, what failed) in the `style-preferences.md` feedback
+  log, and refer the style to the human for revision (Procedure 00 re-run).
 - Generation attempts per packet are capped at 2 rounds without explicit
   human approval to continue.
+
+## Official take selection
+
+Each lyric/style combo gets one OFFICIAL take — the recording the human
+will memorize:
+
+- Packet A's official take is the human-designated memorized clip, always.
+- For other packets: among takes that pass both checks, select the one
+  with the best lyric fidelity; tie-break on lower spoken fraction. Record
+  the selection (and runner-up status of other takes) in
+  `navigators/songs/SONGS.md`. The human may override any selection;
+  once a packet's status becomes LOCKED its official take never changes.
 
 ## Rules
 
@@ -68,3 +107,7 @@ calibration threshold used, and honest caveats.
 
 - If there was some automatic screening of the spoken word, perhaps that would be ideal - though if it uses cloud LLMs I'm thinking that would be costly and wasteful, and if not, I'm not sure a local model would be effective at detecting the spoken portions. *(Excerpt; full prompt recorded in `03-lyrics-format.md`.)*
 - I'm logged into suno on chrome now. Can you please generate the 5 packets songs? Please store the song mp3 in the folder once generated. Ideally screen for the spoken words rather than sung and regenerate or change the style if so.
+
+#### Document Modification On 2026-09-02
+
+- Here's the song for packet A I memorized. https://suno.com/s/WuvaIW3gO07diy4P Also can we have the checker check the lyrics match exactly as expected too or else regenerate. Ideally we should select the official song for each lyric/style combo
