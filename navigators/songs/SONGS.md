@@ -16,8 +16,10 @@ B–E PROPOSED (pending sampling).
 | packet-c-take2.mp3 | C | 5:44 | Generated 2026-09-02, v5.5, eighties ballad style; **PROPOSED OFFICIAL** (screening 2026-09-02, pending human listen) |
 | packet-d-take1.mp3 | D | 5:03 | Generated 2026-09-02, v5.5, bluegrass style; **PROPOSED OFFICIAL** (screening 2026-09-02, cleanest take of the batch, pending human listen) |
 | packet-d-take2.mp3 | D | 5:14 | Generated 2026-09-02, v5.5, bluegrass style; screening suggests possible ordering irregularity near the intro |
-| packet-e-take1.mp3 | E | 6:07 | Generated 2026-09-02, v5.5, choral hymn style; screening flags a possibly missing "Honesty" block — under verification |
-| packet-e-take2.mp3 | E | 6:13 | Generated 2026-09-02, v5.5, choral hymn style; high transcriber noise (reverb), one repeat finding |
+| packet-e-take1.mp3 | E | 6:07 | Generated 2026-09-02, v5.5, choral hymn style; REJECTED — entire outro (final verse + reference + bookend) confirmed sung twice |
+| packet-e-take2.mp3 | E | 6:13 | Generated 2026-09-02, v5.5, choral hymn style; runner-up — one confirmed doubled word ("Purity"), otherwise clean |
+| packet-e-take3.mp3 | E | 4:59 | Round 2, 2026-09-02, same lyrics/style; **PROPOSED OFFICIAL** — zero confirmed defects (all flags resolved to transcriber noise) |
+| packet-e-take4.mp3 | E | 5:12 | Round 2, 2026-09-02; close second — one UNCLEAR opening-line finding, needs a ~10s human listen |
 
 Screening reports (`screen-*.md`) are produced per Procedure 04.
 
@@ -29,11 +31,24 @@ take, but for B, C, and D the flags sit on short bookend/designator/
 reference lines where local transcription is weakest — disclosed in each
 report's caveats — not on verse content. Proposed selections: **B take 2,
 C take 2, D take 1** (best fidelity profile per packet), pending the
-human ear. **Packet E is unresolved**: take 1 shows a genuinely-missing
-"Honesty" block (Ee Seven/Eight, Leviticus 19:11, Acts 24:16) plus two
-repeats; take 2 has no missing content but uniformly high transcriber
-noise. Targeted re-verification is in progress; if the missing block is
-real, E regenerates (round 2 of 2) per the decision rule.
+human ear.
+
+**Packet E resolution**: medium-model verification showed round 1's
+"missing Honesty block" was a transcriber miss — the real defects were
+take 1's duplicated outro (confirmed structural, rejected) and take 2's
+doubled word "Purity". Round 2 (takes 3 and 4, same lyrics/style)
+produced **take 3 with zero confirmed defects → PROPOSED OFFICIAL for
+E**; take 4 is a close second with one unresolved opening-line finding.
+Round cap (2 of 2) reached.
+
+Note: the Suno library also contains an accidental extra E generation
+pair (1:40 and 2:00 clips, from a double submission during round 2, not
+downloaded) — safe for the human to trash.
+
+Suggested human listens, in priority order: e-take3 (proposed official,
+full listen), b-take1's first seconds (opening lines unheard by the
+transcriber), d-take2's intro (possible ordering irregularity),
+e-take4's first ~10s (the UNCLEAR finding, only if curious).
 
 ## Human Prompts
 
