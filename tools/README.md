@@ -47,6 +47,12 @@ calibrated against the Packet A baseline).
   Run these after any dependency upgrade to confirm the pipeline still
   separates sung from spoken and catches missing/repeated lines.
 
+## Publishing
+
+- `publish-official.sh` — uploads `navigators/official/` (mp3s + `index.html`)
+  and a zip of all officials to the public S3 website bucket. Needs the
+  `aws` CLI on the default profile. See Procedure 07.
+
 ## Calibration provenance
 
 Thresholds were calibrated 2026-09-02 against the human's memorized
@@ -62,3 +68,7 @@ designated.
 
 - Are the procedures repeatable by another context?
 - Yes please add these to a new folder in the root repo. Please also add process to copy the official song to another folder denoting the official songs. Please make the entire pipeline process completely repeatable including the file naming conventions and what files to update after when etc.
+
+#### Document Modification On 2026-09-02 (publishing)
+
+- Can you add the official songs to an s3 bucket to be downloaded and have an index file which has the song portfolio please make it look nice and appropriate - a landing page for getting these songs. I give you permission to make a global s3 bucket in my aws account and put the official songs in it

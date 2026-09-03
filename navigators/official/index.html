@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scripture Songs — Foundational Series</title>
+<meta name="description" content="Official recordings of the Foundational Series scripture-memory packets A–E, sung word-for-word from the King James Version. Listen online or download.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f6f1e7;
+    --paper-deep: #ece4d3;
+    --ink: #1f1b16;
+    --ink-soft: #5a5148;
+    --ink-faint: #8d8377;
+    --line: #d9cfbd;
+    --gold: #a8792a;
+    --gold-soft: #e8d8b5;
+    --card: #fffdf8;
+    --shadow: 0 1px 2px rgba(31,27,22,.06), 0 12px 32px -18px rgba(31,27,22,.25);
+    --serif: "Cormorant Garamond", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    padding: 5.5rem 1.5rem 4rem;
+    text-align: center;
+    background:
+      radial-gradient(1100px 420px at 50% -10%, rgba(168,121,42,.16), transparent 70%),
+      linear-gradient(180deg, var(--paper-deep) 0%, var(--paper) 100%);
+    border-bottom: 1px solid var(--line);
+  }
+  .eyebrow {
+    display: inline-block;
+    font-size: .74rem;
+    font-weight: 600;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.1rem;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: clamp(2.6rem, 6vw, 4.4rem);
+    line-height: 1.05;
+    letter-spacing: -.01em;
+    margin: 0 0 1rem;
+  }
+  .hero h1 em { font-style: italic; font-weight: 500; color: var(--gold); }
+  .hero p.lede {
+    max-width: 38rem;
+    margin: 0 auto 2rem;
+    font-size: 1.1rem;
+    color: var(--ink-soft);
+  }
+  .hero .verse {
+    max-width: 34rem;
+    margin: 0 auto 2.25rem;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.25rem;
+    color: var(--ink-soft);
+  }
+  .hero .verse cite { display: block; margin-top: .35rem; font-style: normal; font-size: .85rem; font-family: var(--sans); color: var(--ink-faint); letter-spacing: .08em; text-transform: uppercase; }
+  .actions { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; }
+  .btn {
+    display: inline-flex; align-items: center; gap: .5rem;
+    padding: .8rem 1.35rem;
+    border-radius: 999px;
+    font-weight: 600; font-size: .95rem;
+    text-decoration: none;
+    border: 1px solid var(--ink);
+    background: var(--ink); color: var(--paper);
+    transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .btn:hover { transform: translateY(-1px); box-shadow: var(--shadow); }
+  .btn.secondary { background: transparent; color: var(--ink); border-color: var(--line); }
+  .btn.secondary:hover { background: var(--card); }
+  .btn svg { width: 1.05em; height: 1.05em; }
+  .stats {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 2.5rem;
+    margin-top: 3rem; padding-top: 1.75rem;
+    border-top: 1px solid var(--line);
+    max-width: 44rem; margin-left: auto; margin-right: auto;
+  }
+  .stat { text-align: center; }
+  .stat b { display: block; font-family: var(--serif); font-size: 2rem; font-weight: 600; line-height: 1; }
+  .stat span { font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-faint); }
+
+  /* ---------- Portfolio ---------- */
+  main { max-width: 68rem; margin: 0 auto; padding: 3.5rem 1.5rem 5rem; }
+  .section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: 1.75rem; }
+  .section-head h2 { font-family: var(--serif); font-size: 2rem; font-weight: 600; margin: 0; }
+  .section-head p { margin: 0; color: var(--ink-faint); font-size: .9rem; }
+
+  .packet {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 7.5rem 1fr;
+  }
+  .packet .letter {
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .4rem;
+    background: var(--accent, var(--gold));
+    color: #fff;
+    font-family: var(--serif);
+    padding: 1.5rem .5rem;
+    text-align: center;
+  }
+  .packet .letter b { font-size: 3.6rem; font-weight: 700; line-height: 1; }
+  .packet .letter small { font-family: var(--sans); font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; opacity: .9; }
+  .packet .body { padding: 1.6rem 1.75rem 1.5rem; min-width: 0; }
+  .packet header { display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem 1rem; margin-bottom: .35rem; }
+  .packet h3 { font-family: var(--serif); font-size: 1.85rem; font-weight: 600; margin: 0; line-height: 1.1; }
+  .badge {
+    font-size: .68rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
+    padding: .25rem .6rem; border-radius: 999px;
+    border: 1px solid var(--line); color: var(--ink-soft); background: var(--paper);
+  }
+  .badge.locked { border-color: var(--gold); color: var(--gold); background: var(--gold-soft); }
+  .meta { color: var(--ink-faint); font-size: .85rem; margin: 0 0 .9rem; }
+  .meta span + span::before { content: "·"; margin: 0 .5rem; }
+  .style { color: var(--ink-soft); font-size: .97rem; margin: 0 0 1.1rem; }
+  .style strong { color: var(--ink); font-weight: 600; }
+
+  .topics { display: grid; grid-template-columns: repeat(auto-fill, minmax(11.5rem, 1fr)); gap: .5rem .9rem; margin: 0 0 1.3rem; padding: 0; list-style: none; }
+  .topics li { font-size: .85rem; line-height: 1.35; padding-left: .8rem; border-left: 2px solid var(--gold-soft); }
+  .topics li b { display: block; font-weight: 600; color: var(--ink); }
+  .topics li span { color: var(--ink-faint); font-family: var(--serif); font-size: .95rem; }
+
+  .player { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1rem; padding-top: 1rem; border-top: 1px solid var(--line); }
+  .player audio { flex: 1 1 16rem; min-width: 0; height: 40px; }
+  .dl {
+    display: inline-flex; align-items: center; gap: .45rem;
+    padding: .55rem 1rem; border-radius: 999px;
+    font-size: .85rem; font-weight: 600; text-decoration: none;
+    color: var(--ink); background: var(--paper); border: 1px solid var(--line);
+    white-space: nowrap;
+  }
+  .dl:hover { background: var(--gold-soft); border-color: var(--gold); }
+  .dl svg { width: 1em; height: 1em; }
+
+  /* ---------- Notes & footer ---------- */
+  .notes { margin-top: 3.5rem; padding: 1.75rem 2rem; background: var(--paper-deep); border-radius: 18px; border: 1px solid var(--line); }
+  .notes h2 { font-family: var(--serif); font-size: 1.5rem; margin: 0 0 .75rem; }
+  .notes p, .notes li { color: var(--ink-soft); font-size: .93rem; }
+  .notes ul { padding-left: 1.2rem; margin: .5rem 0 0; }
+  footer { text-align: center; padding: 2rem 1.5rem 3rem; color: var(--ink-faint); font-size: .82rem; border-top: 1px solid var(--line); }
+  footer .mark { font-family: var(--serif); font-size: 1.4rem; color: var(--gold); margin-bottom: .4rem; }
+
+  @media (max-width: 640px) {
+    .packet { grid-template-columns: 1fr; }
+    .packet .letter { flex-direction: row; justify-content: flex-start; padding: .8rem 1.25rem; gap: .9rem; }
+    .packet .letter b { font-size: 2rem; }
+    .packet .body { padding: 1.25rem 1.25rem 1.2rem; }
+    .section-head { flex-direction: column; gap: .25rem; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn:hover { transform: none; } }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <span class="eyebrow">Foundational Series · 60 Pack</span>
+  <h1>Scripture <em>set to song</em></h1>
+  <p class="lede">Five packets of memory verses, twelve verses each, sung word-for-word from the King James Version — every packet in its own musical style so the melodies stay apart in memory.</p>
+  <blockquote class="verse">
+    Thy word have I hid in mine heart, that I might not sin against thee.
+    <cite>Psalm 119:11</cite>
+  </blockquote>
+  <div class="actions">
+    <a class="btn" href="#packets">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+      Listen
+    </a>
+    <a class="btn secondary" href="navigators-official-songs.zip" download>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Download all five (.zip)
+    </a>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>5</b><span>Packets</span></div>
+    <div class="stat"><b>60</b><span>Verses</span></div>
+    <div class="stat"><b>25:15</b><span>Total runtime</span></div>
+    <div class="stat"><b>KJV</b><span>Translation</span></div>
+  </div>
+</section>
+
+<main id="packets">
+  <div class="section-head">
+    <h2>The Portfolio</h2>
+    <p>Official recording per packet · MP3 · updated 2 September 2026</p>
+  </div>
+
+  <!-- Packet A -->
+  <article class="packet" style="--accent:#7a5c2e">
+    <div class="letter"><b>A</b><small>Packet</small></div>
+    <div class="body">
+      <header><h3>Live the New Life</h3><span class="badge locked">Locked</span></header>
+      <p class="meta"><span>5:21</span><span>Jesus Movement folk</span><span>88 BPM</span></p>
+      <p class="style"><strong>The sound:</strong> fingerpicked acoustic guitar, close vocal harmony, warm 1972 analog tape — earnest and unhurried.</p>
+      <ul class="topics">
+        <li><b>Christ the Center</b><span>2 Corinthians 5:17 · Galatians 2:20</span></li>
+        <li><b>Obedience to Christ</b><span>Romans 12:1 · John 14:21</span></li>
+        <li><b>The Word</b><span>2 Timothy 3:16 · Joshua 1:8</span></li>
+        <li><b>Prayer</b><span>John 15:7 · Philippians 4:6-7</span></li>
+        <li><b>Fellowship</b><span>Matthew 18:20 · Hebrews 10:24-25</span></li>
+        <li><b>Witnessing</b><span>Matthew 4:19 · Romans 1:16</span></li>
+      </ul>
+      <div class="player">
+        <audio controls preload="none" src="packet-a.mp3"></audio>
+        <a class="dl" href="packet-a.mp3" download="Packet A - Live the New Life.mp3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download MP3 · 7.5 MB</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- Packet B -->
+  <article class="packet" style="--accent:#8a3b2e">
+    <div class="letter"><b>B</b><small>Packet</small></div>
+    <div class="body">
+      <header><h3>Proclaim Christ</h3><span class="badge">Proposed</span></header>
+      <p class="meta"><span>4:08</span><span>Contemporary gospel soul</span><span>112 BPM</span></p>
+      <p class="style"><strong>The sound:</strong> Hammond B3 organ, piano and handclaps, call-and-response between a soaring lead and answering backing singers — jubilant and triumphant.</p>
+      <ul class="topics">
+        <li><b>All Have Sinned</b><span>Romans 3:23 · Isaiah 53:6</span></li>
+        <li><b>Sin's Penalty</b><span>Romans 6:23 · Hebrews 9:27</span></li>
+        <li><b>Christ Paid the Penalty</b><span>Romans 5:8 · 1 Peter 3:18</span></li>
+        <li><b>Salvation Not By Works</b><span>Ephesians 2:8-9 · Titus 3:5</span></li>
+        <li><b>Must Receive Christ</b><span>John 1:12 · Revelation 3:20</span></li>
+        <li><b>Assurance of Salvation</b><span>1 John 5:13 · John 5:24</span></li>
+      </ul>
+      <div class="player">
+        <audio controls preload="none" src="packet-b.mp3"></audio>
+        <a class="dl" href="packet-b.mp3" download="Packet B - Proclaim Christ.mp3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download MP3 · 5.5 MB</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- Packet C -->
+  <article class="packet" style="--accent:#2f5d7a">
+    <div class="letter"><b>C</b><small>Packet</small></div>
+    <div class="body">
+      <header><h3>Rely on God's Resources</h3><span class="badge">Proposed</span></header>
+      <p class="meta"><span>5:44</span><span>Eighties soft rock ballad</span><span>68 BPM</span></p>
+      <p class="style"><strong>The sound:</strong> warm piano, clean electric guitar and lush synth pads, an expressive solo lead over a polished 1985 studio sheen — comforting and heartfelt.</p>
+      <ul class="topics">
+        <li><b>His Spirit</b><span>1 Corinthians 3:16 · 1 Corinthians 2:12</span></li>
+        <li><b>His Strength</b><span>Isaiah 41:10 · Philippians 4:13</span></li>
+        <li><b>His Faithfulness</b><span>Lamentations 3:22-23 · Numbers 23:19</span></li>
+        <li><b>His Peace</b><span>Isaiah 26:3 · 1 Peter 5:7</span></li>
+        <li><b>His Provision</b><span>Romans 8:32 · Philippians 4:19</span></li>
+        <li><b>His Help in Temptation</b><span>Hebrews 2:18 · Psalm 119:9,11</span></li>
+      </ul>
+      <div class="player">
+        <audio controls preload="none" src="packet-c.mp3"></audio>
+        <a class="dl" href="packet-c.mp3" download="Packet C - Rely on God's Resources.mp3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download MP3 · 7.6 MB</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- Packet D -->
+  <article class="packet" style="--accent:#4f6b34">
+    <div class="letter"><b>D</b><small>Packet</small></div>
+    <div class="body">
+      <header><h3>Be Christ's Disciples</h3><span class="badge">Proposed</span></header>
+      <p class="meta"><span>5:03</span><span>Bluegrass revival</span><span>126 BPM</span></p>
+      <p class="style"><strong>The sound:</strong> driving banjo, flatpicked guitar, fiddle and upright bass, male–female duet vocals trading verses in crisp 1990s Nashville acoustic production — bright and joyful.</p>
+      <ul class="topics">
+        <li><b>Put Christ First</b><span>Matthew 6:33 · Luke 9:23</span></li>
+        <li><b>Separate From the World</b><span>1 John 2:15-16 · Romans 12:2</span></li>
+        <li><b>Be Steadfast</b><span>1 Corinthians 15:58 · Hebrews 12:3</span></li>
+        <li><b>Serve Others</b><span>Mark 10:45 · 2 Corinthians 4:5</span></li>
+        <li><b>Give Generously</b><span>Proverbs 3:9-10 · 2 Corinthians 9:6-7</span></li>
+        <li><b>Develop World Vision</b><span>Acts 1:8 · Matthew 28:19-20</span></li>
+      </ul>
+      <div class="player">
+        <audio controls preload="none" src="packet-d.mp3"></audio>
+        <a class="dl" href="packet-d.mp3" download="Packet D - Be Christ's Disciples.mp3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download MP3 · 6.7 MB</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- Packet E -->
+  <article class="packet" style="--accent:#5b4a7a">
+    <div class="letter"><b>E</b><small>Packet</small></div>
+    <div class="body">
+      <header><h3>Grow in Christlikeness</h3><span class="badge">Proposed</span></header>
+      <p class="meta"><span>4:59</span><span>Sacred choral hymn</span><span>96 BPM</span></p>
+      <p class="style"><strong>The sound:</strong> grand pipe organ beneath a full mixed choir carrying a clear hymn melody, in a reverberant 1960s cathedral recording — reverent and uplifting.</p>
+      <ul class="topics">
+        <li><b>Love</b><span>John 13:34-35 · 1 John 3:18</span></li>
+        <li><b>Humility</b><span>Philippians 2:3-4 · 1 Peter 5:5-6</span></li>
+        <li><b>Purity</b><span>Ephesians 5:3 · 1 Peter 2:11</span></li>
+        <li><b>Honesty</b><span>Leviticus 19:11 · Acts 24:16</span></li>
+        <li><b>Faith</b><span>Hebrews 11:6 · Romans 4:20-21</span></li>
+        <li><b>Good Works</b><span>Galatians 6:9-10 · Matthew 5:16</span></li>
+      </ul>
+      <div class="player">
+        <audio controls preload="none" src="packet-e.mp3"></audio>
+        <a class="dl" href="packet-e.mp3" download="Packet E - Grow in Christlikeness.mp3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download MP3 · 6.5 MB</a>
+      </div>
+    </div>
+  </article>
+
+  <section class="notes">
+    <h2>How to use these</h2>
+    <p>Each song walks through its packet in order: the topic, then each verse sung in full, then the reference. Listen to a packet on repeat for a week — in the car, while walking, while washing up — and let the tune carry the text until you can sing it without the recording.</p>
+    <ul>
+      <li><b>Locked</b> means the recording is final and being memorized as-is. <b>Proposed</b> means it has passed screening and is awaiting a final listen; it may still be replaced.</li>
+      <li>Every lyric is the King James text verbatim. Recordings are screened for spoken-word passages and word-for-word lyric fidelity before being published here.</li>
+      <li>Links point to the canonical file for each packet, so a bookmark keeps working if a recording is re-selected.</li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div class="mark">✦</div>
+  Foundational Series · Scripture Songs · Hosted on Amazon S3
+</footer>
+
+</body>
+</html>

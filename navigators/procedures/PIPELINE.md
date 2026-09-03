@@ -17,6 +17,7 @@ when.
 | 5 | `05-suno-generation.md` | lyrics file → `songs/packet-<letter>-take<N>.mp3` + `songs/SONGS.md` rows |
 | 6 | `04-spoken-word-screen.md` | takes → `songs/screen-<songname>.md` reports + PASS/FAIL verdicts (tools in `tools/`, see `tools/README.md`) |
 | 7 | `06-official-selection.md` | verdicts → `official/packet-<letter>.mp3` + selection recorded in `SONGS.md` |
+| 8 | `07-publish-official.md` | `official/` → public S3 landing page (`official/index.html` + mp3s + zip) via `tools/publish-official.sh` |
 
 Stages 5–7 loop per Procedure 04's decision rule (max 2 generation
 rounds per packet without human approval; then style referral to
@@ -32,6 +33,8 @@ Procedure 00).
 - Screening reports: `navigators/songs/screen-<mp3-basename>.md`.
 - Officials: `navigators/official/packet-<letter>.mp3` — canonical,
   take-number-free, overwritten on re-selection (Procedure 06).
+- Landing page: `navigators/official/index.html`; S3 keys mirror `official/`
+  filenames (Procedure 07).
 - Suno-side titles: `Packet <LETTER> - <Packet Title>`; workspace
   `Packets`.
 
@@ -44,6 +47,7 @@ Procedure 00).
 | a failed round | `style-preferences.md` feedback log entry (with human confirmation) |
 | a selection | `official/packet-<letter>.mp3` copy + `SONGS.md` selection section |
 | a human lock/override | `SONGS.md` status change (and re-copy on override) |
+| any change to `official/` | `official/index.html` (badge/duration/size/date) + run `tools/publish-official.sh` |
 
 Commits follow `CLAUDE.md` (Human Prompts in messages; no agent
 attribution). Documents carry `## Human Prompts` sections; generated
@@ -58,6 +62,7 @@ reports include one naming the generating script.
   human), credits available; byte-verification of pasted lyrics is
   mandatory (Procedure 05).
 - Calibration reference: `songs/packet-a-memorized.mp3` + `lyrics/packet-a.md`.
+- Publishing: `aws` CLI, default profile on account 381492251647 (Procedure 07).
 
 ## Human Prompts
 
@@ -65,3 +70,7 @@ reports include one naming the generating script.
 
 - Are the procedures repeatable by another context?
 - Yes please add these to a new folder in the root repo. Please also add process to copy the official song to another folder denoting the official songs. Please make the entire pipeline process completely repeatable including the file naming conventions and what files to update after when etc.
+
+#### Document Modification On 2026-09-02 (publishing)
+
+- Can you add the official songs to an s3 bucket to be downloaded and have an index file which has the song portfolio please make it look nice and appropriate - a landing page for getting these songs. I give you permission to make a global s3 bucket in my aws account and put the official songs in it
