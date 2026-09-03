@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Foundational Series of Scripture Songs</title>
+<meta name="description" content="Sixty verses of the Foundational Series, Packets A to E, set to music in the words of the King James Version. Listen or download.">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=IM+Fell+French+Canon:ital@0;1&family=IM+Fell+French+Canon+SC&family=IM+Fell+DW+Pica:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f1e8d2;
+    --paper-deep: #e6dabd;
+    --ink: #221d19;
+    --ink-soft: #4a423b;
+    --rubric: #8b1e1e;
+    --rule: #3a322c;
+    --desk: #2a2320;
+    --body: "IM Fell English", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    --sc: "IM Fell English SC", "IM Fell English", Palatino, Georgia, serif;
+    --canon: "IM Fell French Canon", "IM Fell English", Palatino, Georgia, serif;
+    --canon-sc: "IM Fell French Canon SC", "IM Fell English SC", Palatino, Georgia, serif;
+    --pica: "IM Fell DW Pica", "IM Fell English", Palatino, Georgia, serif;
+  }
+  * { box-sizing: border-box; }
+  html { background: var(--desk); }
+  body {
+    margin: 0;
+    padding: 2.5rem 1rem 4rem;
+    background:
+      radial-gradient(ellipse at 50% 40%, #362d28 0%, var(--desk) 65%, #1c1714 100%);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 18px;
+    line-height: 1.45;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ---------- The leaf ---------- */
+  .leaf {
+    position: relative;
+    max-width: 58rem;
+    margin: 0 auto;
+    background:
+      radial-gradient(ellipse at 20% 10%, rgba(255,250,235,0.55), transparent 55%),
+      radial-gradient(ellipse at 85% 95%, rgba(120,90,50,0.16), transparent 55%),
+      radial-gradient(ellipse at 10% 90%, rgba(120,90,50,0.10), transparent 45%),
+      var(--paper);
+    box-shadow:
+      0 0 0 1px rgba(0,0,0,0.6),
+      0 30px 60px -20px rgba(0,0,0,0.9),
+      inset 0 0 120px rgba(90,60,30,0.10);
+    padding: 2.2rem 2.4rem 3rem;
+  }
+  .frame {
+    border: 1px solid var(--rule);
+    outline: 3px double var(--rule);
+    outline-offset: 3px;
+    padding: 1.6rem 2.2rem 2.4rem;
+  }
+  @media (max-width: 640px) {
+    body { padding: 1rem 0.5rem 2rem; font-size: 17px; }
+    .leaf { padding: 1.1rem 0.9rem 1.6rem; }
+    .frame { padding: 1rem 0.9rem 1.4rem; outline-offset: 2px; }
+    .running-head span:nth-child(2) { display: none; }
+  }
+
+  /* ---------- Running head ---------- */
+  .running-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: var(--sc);
+    font-size: 0.82rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.3rem;
+    margin-bottom: 2.2rem;
+  }
+  .running-head span:nth-child(2) { font-family: var(--body); letter-spacing: 0; text-transform: none; font-style: italic; }
+
+  /* ---------- Title page ---------- */
+  .title-page { text-align: center; padding: 0.5rem 0 1.5rem; }
+  .title-page .the {
+    font-family: var(--canon-sc);
+    font-size: 1.05rem;
+    letter-spacing: 0.35em;
+    margin: 0 0 0.2rem 0.35em;
+  }
+  .title-page h1 {
+    font-family: var(--canon);
+    font-weight: normal;
+    font-size: clamp(2.1rem, 6vw, 3.6rem);
+    line-height: 1.05;
+    letter-spacing: 0.02em;
+    margin: 0 0 0.35rem;
+    text-transform: uppercase;
+  }
+  .title-page h1 small {
+    display: block;
+    font-family: var(--canon);
+    font-style: italic;
+    text-transform: none;
+    font-size: 0.42em;
+    letter-spacing: 0.04em;
+    margin-top: 0.35rem;
+  }
+  .title-page .being {
+    font-style: italic;
+    max-width: 30rem;
+    margin: 1.2rem auto 0;
+    font-size: 1.05rem;
+    line-height: 1.5;
+  }
+  .title-page .being b { font-style: normal; font-family: var(--sc); font-weight: normal; letter-spacing: 0.08em; }
+  .ornament {
+    text-align: center;
+    color: var(--rubric);
+    font-size: 1.6rem;
+    line-height: 1;
+    margin: 1.4rem 0;
+    letter-spacing: 0.4em;
+  }
+  .ornament::before, .ornament::after {
+    content: "";
+    display: inline-block;
+    width: 5rem;
+    max-width: 22vw;
+    height: 1px;
+    background: var(--rule);
+    vertical-align: middle;
+    margin: 0 0.6rem;
+  }
+  .title-page .imprint {
+    font-family: var(--sc);
+    letter-spacing: 0.14em;
+    font-size: 0.85rem;
+    line-height: 1.9;
+  }
+  .title-page .imprint i { font-family: var(--body); font-style: italic; letter-spacing: 0; text-transform: none; font-size: 1rem; }
+  .title-page .year {
+    font-family: var(--canon-sc);
+    letter-spacing: 0.3em;
+    margin-top: 0.8rem;
+    font-size: 1rem;
+  }
+
+  /* ---------- Section rules & headings ---------- */
+  hr.rule {
+    border: 0;
+    border-top: 1px solid var(--rule);
+    margin: 2.4rem 0 1.8rem;
+    position: relative;
+  }
+  hr.rule::after {
+    content: "❦";
+    position: absolute;
+    left: 50%; top: -0.75em;
+    transform: translateX(-50%);
+    background: var(--paper);
+    padding: 0 0.6em;
+    color: var(--rubric);
+    font-size: 1.1rem;
+    line-height: 1;
+  }
+  h2 {
+    font-family: var(--canon-sc);
+    font-weight: normal;
+    text-align: center;
+    font-size: 1.25rem;
+    letter-spacing: 0.28em;
+    margin: 0 0 1.1rem 0.28em;
+    text-transform: uppercase;
+  }
+
+  /* ---------- Order of the packets (table of contents) ---------- */
+  .order { max-width: 36rem; margin: 0 auto; }
+  .order p.note { text-align: center; font-style: italic; margin: 0 0 1rem; color: var(--ink-soft); font-size: 0.95rem; }
+  .order ol { list-style: none; margin: 0; padding: 0; }
+  .order li { display: flex; align-items: baseline; gap: 0.5rem; margin: 0.35rem 0; }
+  .order a { color: inherit; text-decoration: none; }
+  .order a:hover { color: var(--rubric); }
+  .order .lead { flex: 1; border-bottom: 1px dotted var(--ink-soft); transform: translateY(-0.3em); min-width: 1.5rem; }
+  .order .letter { font-family: var(--sc); letter-spacing: 0.08em; min-width: 5.5rem; }
+  .order .len { font-variant-numeric: oldstyle-nums; white-space: nowrap; }
+  .order .sum { display: flex; justify-content: space-between; margin-top: 0.9rem; padding-top: 0.5rem; border-top: 1px solid var(--rule); font-family: var(--sc); letter-spacing: 0.1em; font-size: 0.9rem; }
+  .order .sum a { border-bottom: 1px solid var(--rubric); color: var(--rubric); }
+  @media (max-width: 640px) {
+    .order li { display: grid; grid-template-columns: auto 1fr; column-gap: 0.6rem; margin: 0.7rem 0; }
+    .order .letter { min-width: 0; }
+    .order .lead { display: none; }
+    .order .len { grid-column: 2; font-size: 0.92rem; font-style: italic; color: var(--ink-soft); }
+  }
+
+  /* ---------- Packets (chapters) ---------- */
+  .packet { margin-top: 0.5rem; scroll-margin-top: 1rem; }
+  .chapter-head { text-align: center; margin-bottom: 1.2rem; }
+  .chapter-head .num {
+    font-family: var(--canon-sc);
+    color: var(--rubric);
+    font-size: 1.35rem;
+    letter-spacing: 0.3em;
+    margin-left: 0.3em;
+    text-transform: uppercase;
+  }
+  .chapter-head h3 {
+    font-family: var(--canon);
+    font-weight: normal;
+    font-style: italic;
+    font-size: clamp(1.5rem, 4vw, 2.1rem);
+    margin: 0.15rem 0 0;
+    line-height: 1.15;
+  }
+  .argument {
+    position: relative;
+    font-style: italic;
+    font-size: 1.02rem;
+    line-height: 1.5;
+    max-width: 40rem;
+    margin: 0 auto 1.4rem;
+    text-align: center;
+    color: var(--ink-soft);
+  }
+  .argument b { font-style: normal; font-family: var(--sc); font-weight: normal; letter-spacing: 0.1em; color: var(--ink); }
+
+  .body-cols {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2.6rem;
+    margin: 0 0 1.4rem;
+  }
+  .body-cols::before {
+    content: "";
+    position: absolute;
+    left: 50%; top: 0.2em; bottom: 0.2em;
+    width: 1px;
+    background: var(--rule);
+    transform: translateX(-50%);
+  }
+  .body-cols p { margin: 0 0 0.55rem; text-indent: 0; hyphens: auto; }
+  .vn {
+    font-family: var(--pica);
+    color: var(--rubric);
+    font-size: 0.72em;
+    vertical-align: 0.45em;
+    margin-right: 0.15em;
+    font-variant-numeric: oldstyle-nums;
+  }
+  .topic { font-family: var(--sc); letter-spacing: 0.06em; }
+  .ref { font-style: italic; }
+  @media (max-width: 640px) {
+    .body-cols { grid-template-columns: 1fr; }
+    .body-cols::before { display: none; }
+  }
+
+  /* ---------- Marginal gloss (status) ---------- */
+  .gloss {
+    position: absolute;
+    right: 100%;
+    top: 0.1rem;
+    width: 5.2rem;
+    margin-right: 1.4rem;
+    text-align: right;
+    font-style: italic;
+    font-size: 0.82rem;
+    line-height: 1.25;
+    color: var(--rubric);
+  }
+  .gloss b { display: block; font-family: var(--sc); font-style: normal; font-weight: normal; letter-spacing: 0.12em; }
+  @media (max-width: 1080px) {
+    .gloss { position: static; display: block; width: auto; margin: 0 0 0.6rem; text-align: center; }
+    .gloss b { display: inline; margin-right: 0.4em; }
+  }
+
+  /* ---------- The player ---------- */
+  .hear {
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 0.7rem 0.4rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 1rem;
+    font-variant-numeric: tabular-nums oldstyle-nums;
+  }
+  .hear button {
+    font: inherit;
+    font-family: var(--sc);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    background: none;
+    border: 1px solid var(--rule);
+    color: var(--ink);
+    padding: 0.35rem 0.9rem 0.3rem;
+    cursor: pointer;
+    min-width: 7.2rem;
+  }
+  .hear button:hover { background: var(--ink); color: var(--paper); }
+  .hear button::before { content: "♪ "; color: var(--rubric); }
+  .hear button:hover::before { color: var(--paper); }
+  .hear .bar {
+    position: relative;
+    height: 1.2rem;
+    cursor: pointer;
+  }
+  .hear .bar::before {
+    content: "";
+    position: absolute; left: 0; right: 0; top: 50%;
+    height: 1px; background: var(--rule);
+  }
+  .hear .bar i {
+    position: absolute; left: 0; top: 50%;
+    height: 3px; margin-top: -1px;
+    width: 0; background: var(--rubric);
+    pointer-events: none;
+  }
+  .hear .bar i::after {
+    content: "";
+    position: absolute; right: -4px; top: -3px;
+    width: 9px; height: 9px;
+    background: var(--rubric);
+    transform: rotate(45deg);
+  }
+  .hear .time { font-size: 0.95rem; color: var(--ink-soft); white-space: nowrap; }
+  .hear audio { display: none; }
+  .no-js .hear audio { display: block; grid-column: 1 / -1; width: 100%; }
+  .no-js .hear button, .no-js .hear .bar, .no-js .hear .time { display: none; }
+  @media (max-width: 640px) {
+    .hear { grid-template-columns: auto 1fr; }
+    .hear .time { grid-column: 1 / -1; text-align: right; }
+  }
+
+  .fetch {
+    text-align: center;
+    margin: 0.8rem 0 0;
+    font-size: 0.98rem;
+  }
+  .fetch a { color: var(--rubric); text-decoration: none; border-bottom: 1px solid currentColor; }
+  .fetch a:hover { color: var(--ink); }
+  .fetch .meta { font-style: italic; color: var(--ink-soft); }
+
+  .catchword {
+    text-align: right;
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+    margin: 1.2rem 0 0;
+  }
+
+  /* ---------- Colophon ---------- */
+  .colophon { text-align: center; max-width: 34rem; margin: 0 auto; font-size: 0.98rem; }
+  .colophon p { margin: 0.5rem 0; }
+  .colophon .device { color: var(--rubric); font-size: 2rem; line-height: 1; margin: 1.2rem 0 0.6rem; }
+  .colophon .finis { font-family: var(--canon-sc); letter-spacing: 0.4em; margin-left: 0.4em; font-size: 1.05rem; }
+  .colophon .all { display: inline-block; margin: 0.6rem 0 1rem; padding: 0.5rem 1.2rem; border: 1px solid var(--rule); outline: 3px double var(--rule); outline-offset: 2px; color: var(--ink); text-decoration: none; font-family: var(--sc); letter-spacing: 0.12em; }
+  .colophon .all:hover { background: var(--ink); color: var(--paper); }
+  .colophon .all i { font-family: var(--body); letter-spacing: 0; text-transform: none; color: var(--ink-soft); }
+  .colophon .all:hover i { color: var(--paper); }
+
+  .folio {
+    text-align: center;
+    font-family: var(--sc);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    color: var(--ink-soft);
+    margin-top: 2.4rem;
+  }
+</style>
+</head>
+<body class="no-js">
+<script>document.body.classList.remove('no-js');</script>
+
+<main class="leaf">
+<div class="frame">
+
+  <div class="running-head">
+    <span>The Foundational Series</span>
+    <span>Sixty Verses, Set to Music</span>
+    <span>Packets A–E</span>
+  </div>
+
+  <!-- ========== TITLE PAGE ========== -->
+  <header class="title-page">
+    <p class="the">The</p>
+    <h1>Foundational Series<small>of Scripture Songs</small></h1>
+    <p class="being">Being the <b>Sixty Verses</b> of the Sixty&#8209;Pack, in five Packets lettered A to E, each set to its own music and sung entire, for the better fixing of the Word in the <b>Memory</b>.</p>
+    <div class="ornament">❦</div>
+    <p class="imprint">
+      Faithfully rendered in the words of the<br>
+      <i>Authorised (King James) Version</i><br>
+      of the Holy Bible, with the references sung
+    </p>
+    <p class="year">Anno Domini MMXXVI</p>
+  </header>
+
+  <hr class="rule">
+
+  <!-- ========== THE ORDER OF THE PACKETS ========== -->
+  <section class="order" aria-labelledby="order-h">
+    <h2 id="order-h">The Order of the Packets</h2>
+    <p class="note">with the manner of their singing, and the length of each</p>
+    <ol>
+      <li><span class="letter">Packet A</span><a href="#packet-a"><i>Live the New Life</i></a><span class="lead"></span><span class="len">folk · 5 min. 21 sec.</span></li>
+      <li><span class="letter">Packet B</span><a href="#packet-b"><i>Proclaim Christ</i></a><span class="lead"></span><span class="len">gospel · 4 min. 8 sec.</span></li>
+      <li><span class="letter">Packet C</span><a href="#packet-c"><i>Rely on God's Resources</i></a><span class="lead"></span><span class="len">ballad · 5 min. 44 sec.</span></li>
+      <li><span class="letter">Packet D</span><a href="#packet-d"><i>Be Christ's Disciples</i></a><span class="lead"></span><span class="len">bluegrass · 5 min. 3 sec.</span></li>
+      <li><span class="letter">Packet E</span><a href="#packet-e"><i>Grow in Christlikeness</i></a><span class="lead"></span><span class="len">choral · 4 min. 59 sec.</span></li>
+    </ol>
+    <div class="sum">
+      <span>In all, 25 min. 16 sec.</span>
+      <a href="/navigators-official-songs.zip" download>Take all five ↓</a>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- ========== PACKET A ========== -->
+  <article class="packet" id="packet-a">
+    <div class="chapter-head">
+      <div class="num">Packet A</div>
+      <h3>Live the New Life</h3>
+    </div>
+    <p class="argument">
+      <span class="gloss"><b>Locked</b>the memorised recording</span>
+      <b>The Argument.</b> Sung in the manner of the Jesus&#8209;movement folk singers: fingerpicked guitar, close vocal harmony, and the warmth of tape, unhurried at eighty&#8209;eight beats to the minute.
+    </p>
+    <div class="body-cols">
+      <div>
+        <p><span class="vn">1</span><span class="topic">Christ the Center.</span> <span class="ref">2 Corinthians 5:17; Galatians 2:20.</span></p>
+        <p><span class="vn">2</span><span class="topic">Obedience to Christ.</span> <span class="ref">Romans 12:1; John 14:21.</span></p>
+        <p><span class="vn">3</span><span class="topic">The Word.</span> <span class="ref">2 Timothy 3:16; Joshua 1:8.</span></p>
+      </div>
+      <div>
+        <p><span class="vn">4</span><span class="topic">Prayer.</span> <span class="ref">John 15:7; Philippians 4:6–7.</span></p>
+        <p><span class="vn">5</span><span class="topic">Fellowship.</span> <span class="ref">Matthew 18:20; Hebrews 10:24–25.</span></p>
+        <p><span class="vn">6</span><span class="topic">Witnessing.</span> <span class="ref">Matthew 4:19; Romans 1:16.</span></p>
+      </div>
+    </div>
+    <div class="hear">
+      <button type="button" aria-label="Play Packet A">Hear</button>
+      <div class="bar" role="slider" aria-label="Position in Packet A"><i></i></div>
+      <span class="time">0:00 / 5:21</span>
+      <audio preload="none" src="/packet-a.mp3" controls></audio>
+    </div>
+    <p class="fetch"><a href="/packet-a.mp3" download="Packet A - Live the New Life.mp3">Download the recording</a> <span class="meta">— mp3, 7.5 MB</span></p>
+    <p class="catchword">Proclaim</p>
+  </article>
+
+  <hr class="rule">
+
+  <!-- ========== PACKET B ========== -->
+  <article class="packet" id="packet-b">
+    <div class="chapter-head">
+      <div class="num">Packet B</div>
+      <h3>Proclaim Christ</h3>
+    </div>
+    <p class="argument">
+      <span class="gloss"><b>Proposed</b>awaiting the hearer's approval</span>
+      <b>The Argument.</b> Sung in the manner of contemporary gospel: Hammond organ, piano and handclaps, a soaring lead answered by the singers behind, jubilant at one hundred and twelve beats to the minute.
+    </p>
+    <div class="body-cols">
+      <div>
+        <p><span class="vn">1</span><span class="topic">All Have Sinned.</span> <span class="ref">Romans 3:23; Isaiah 53:6.</span></p>
+        <p><span class="vn">2</span><span class="topic">Sin's Penalty.</span> <span class="ref">Romans 6:23; Hebrews 9:27.</span></p>
+        <p><span class="vn">3</span><span class="topic">Christ Paid the Penalty.</span> <span class="ref">Romans 5:8; 1 Peter 3:18.</span></p>
+      </div>
+      <div>
+        <p><span class="vn">4</span><span class="topic">Salvation Not by Works.</span> <span class="ref">Ephesians 2:8–9; Titus 3:5.</span></p>
+        <p><span class="vn">5</span><span class="topic">Must Receive Christ.</span> <span class="ref">John 1:12; Revelation 3:20.</span></p>
+        <p><span class="vn">6</span><span class="topic">Assurance of Salvation.</span> <span class="ref">1 John 5:13; John 5:24.</span></p>
+      </div>
+    </div>
+    <div class="hear">
+      <button type="button" aria-label="Play Packet B">Hear</button>
+      <div class="bar" role="slider" aria-label="Position in Packet B"><i></i></div>
+      <span class="time">0:00 / 4:08</span>
+      <audio preload="none" src="/packet-b.mp3" controls></audio>
+    </div>
+    <p class="fetch"><a href="/packet-b.mp3" download="Packet B - Proclaim Christ.mp3">Download the recording</a> <span class="meta">— mp3, 5.5 MB</span></p>
+    <p class="catchword">Rely</p>
+  </article>
+
+  <hr class="rule">
+
+  <!-- ========== PACKET C ========== -->
+  <article class="packet" id="packet-c">
+    <div class="chapter-head">
+      <div class="num">Packet C</div>
+      <h3>Rely on God's Resources</h3>
+    </div>
+    <p class="argument">
+      <span class="gloss"><b>Proposed</b>awaiting the hearer's approval</span>
+      <b>The Argument.</b> Sung as a soft&#8209;rock ballad of the year 1985: warm piano, clean guitar and lush synthesizer, a single expressive voice on a strong melody, tender at sixty&#8209;eight beats to the minute.
+    </p>
+    <div class="body-cols">
+      <div>
+        <p><span class="vn">1</span><span class="topic">His Spirit.</span> <span class="ref">1 Corinthians 3:16; 1 Corinthians 2:12.</span></p>
+        <p><span class="vn">2</span><span class="topic">His Strength.</span> <span class="ref">Isaiah 41:10; Philippians 4:13.</span></p>
+        <p><span class="vn">3</span><span class="topic">His Faithfulness.</span> <span class="ref">Lamentations 3:22–23; Numbers 23:19.</span></p>
+      </div>
+      <div>
+        <p><span class="vn">4</span><span class="topic">His Peace.</span> <span class="ref">Isaiah 26:3; 1 Peter 5:7.</span></p>
+        <p><span class="vn">5</span><span class="topic">His Provision.</span> <span class="ref">Romans 8:32; Philippians 4:19.</span></p>
+        <p><span class="vn">6</span><span class="topic">His Help in Temptation.</span> <span class="ref">Hebrews 2:18; Psalm 119:9, 11.</span></p>
+      </div>
+    </div>
+    <div class="hear">
+      <button type="button" aria-label="Play Packet C">Hear</button>
+      <div class="bar" role="slider" aria-label="Position in Packet C"><i></i></div>
+      <span class="time">0:00 / 5:44</span>
+      <audio preload="none" src="/packet-c.mp3" controls></audio>
+    </div>
+    <p class="fetch"><a href="/packet-c.mp3" download="Packet C - Rely on God's Resources.mp3">Download the recording</a> <span class="meta">— mp3, 7.6 MB</span></p>
+    <p class="catchword">Be</p>
+  </article>
+
+  <hr class="rule">
+
+  <!-- ========== PACKET D ========== -->
+  <article class="packet" id="packet-d">
+    <div class="chapter-head">
+      <div class="num">Packet D</div>
+      <h3>Be Christ's Disciples</h3>
+    </div>
+    <p class="argument">
+      <span class="gloss"><b>Proposed</b>awaiting the hearer's approval</span>
+      <b>The Argument.</b> Sung in the bluegrass revival manner: driving banjo, flatpicked guitar, fiddle and upright bass, a man and a woman trading verses, bright at one hundred and twenty&#8209;six beats to the minute.
+    </p>
+    <div class="body-cols">
+      <div>
+        <p><span class="vn">1</span><span class="topic">Put Christ First.</span> <span class="ref">Matthew 6:33; Luke 9:23.</span></p>
+        <p><span class="vn">2</span><span class="topic">Separate from the World.</span> <span class="ref">1 John 2:15–16; Romans 12:2.</span></p>
+        <p><span class="vn">3</span><span class="topic">Be Steadfast.</span> <span class="ref">1 Corinthians 15:58; Hebrews 12:3.</span></p>
+      </div>
+      <div>
+        <p><span class="vn">4</span><span class="topic">Serve Others.</span> <span class="ref">Mark 10:45; 2 Corinthians 4:5.</span></p>
+        <p><span class="vn">5</span><span class="topic">Give Generously.</span> <span class="ref">Proverbs 3:9–10; 2 Corinthians 9:6–7.</span></p>
+        <p><span class="vn">6</span><span class="topic">Develop World Vision.</span> <span class="ref">Acts 1:8; Matthew 28:19–20.</span></p>
+      </div>
+    </div>
+    <div class="hear">
+      <button type="button" aria-label="Play Packet D">Hear</button>
+      <div class="bar" role="slider" aria-label="Position in Packet D"><i></i></div>
+      <span class="time">0:00 / 5:03</span>
+      <audio preload="none" src="/packet-d.mp3" controls></audio>
+    </div>
+    <p class="fetch"><a href="/packet-d.mp3" download="Packet D - Be Christ's Disciples.mp3">Download the recording</a> <span class="meta">— mp3, 6.7 MB</span></p>
+    <p class="catchword">Grow</p>
+  </article>
+
+  <hr class="rule">
+
+  <!-- ========== PACKET E ========== -->
+  <article class="packet" id="packet-e">
+    <div class="chapter-head">
+      <div class="num">Packet E</div>
+      <h3>Grow in Christlikeness</h3>
+    </div>
+    <p class="argument">
+      <span class="gloss"><b>Proposed</b>awaiting the hearer's approval</span>
+      <b>The Argument.</b> Sung as a sacred hymn: a full choir over the great pipe organ, a clear hymn melody in a reverberant cathedral, stately at ninety&#8209;six beats to the minute.
+    </p>
+    <div class="body-cols">
+      <div>
+        <p><span class="vn">1</span><span class="topic">Love.</span> <span class="ref">John 13:34–35; 1 John 3:18.</span></p>
+        <p><span class="vn">2</span><span class="topic">Humility.</span> <span class="ref">Philippians 2:3–4; 1 Peter 5:5–6.</span></p>
+        <p><span class="vn">3</span><span class="topic">Purity.</span> <span class="ref">Ephesians 5:3; 1 Peter 2:11.</span></p>
+      </div>
+      <div>
+        <p><span class="vn">4</span><span class="topic">Honesty.</span> <span class="ref">Leviticus 19:11; Acts 24:16.</span></p>
+        <p><span class="vn">5</span><span class="topic">Faith.</span> <span class="ref">Hebrews 11:6; Romans 4:20–21.</span></p>
+        <p><span class="vn">6</span><span class="topic">Good Works.</span> <span class="ref">Galatians 6:9–10; Matthew 5:16.</span></p>
+      </div>
+    </div>
+    <div class="hear">
+      <button type="button" aria-label="Play Packet E">Hear</button>
+      <div class="bar" role="slider" aria-label="Position in Packet E"><i></i></div>
+      <span class="time">0:00 / 4:59</span>
+      <audio preload="none" src="/packet-e.mp3" controls></audio>
+    </div>
+    <p class="fetch"><a href="/packet-e.mp3" download="Packet E - Grow in Christlikeness.mp3">Download the recording</a> <span class="meta">— mp3, 6.5 MB</span></p>
+  </article>
+
+  <hr class="rule">
+
+  <!-- ========== COLOPHON ========== -->
+  <footer class="colophon">
+    <div class="device">✠</div>
+    <p class="finis">Finis</p>
+    <p>Here endeth the Foundational Series: five Packets, sixty verses, the whole sung in twenty&#8209;five minutes and sixteen seconds.</p>
+    <p><a class="all" href="/navigators-official-songs.zip" download>Download all five <i>(zip, 35 MB)</i></a></p>
+    <p style="font-style: italic; color: var(--ink-soft); font-size: 0.92rem;">Each recording sings the verse and then its reference, that the address may be remembered together with the words. The verses are taken from the Sixty&#8209;Pack of the Navigators' Foundational Series and set in the Authorised Version, which is in the public domain. Packets marked <span style="font-family: var(--sc); font-style: normal; color: var(--rubric); letter-spacing: 0.1em;">Proposed</span> are the best takes yet made and may be re&#8209;recorded; Packet A is fixed.</p>
+    <p class="folio">Set in the Fell Types · Printed to the Cloud · MMXXVI</p>
+  </footer>
+
+</div>
+</main>
+
+<script>
+(function () {
+  var fmt = function (s) {
+    s = Math.max(0, Math.floor(s || 0));
+    return Math.floor(s / 60) + ':' + ('0' + (s % 60)).slice(-2);
+  };
+  var players = [];
+  document.querySelectorAll('.hear').forEach(function (h) {
+    var audio = h.querySelector('audio');
+    var btn = h.querySelector('button');
+    var bar = h.querySelector('.bar');
+    var fill = bar.querySelector('i');
+    var time = h.querySelector('.time');
+    var total = time.textContent.split('/')[1].trim();
+    audio.removeAttribute('controls');
+    players.push(audio);
+    var render = function () {
+      var d = audio.duration || 0;
+      var t = audio.currentTime || 0;
+      fill.style.width = d ? (100 * t / d) + '%' : '0%';
+      time.textContent = fmt(t) + ' / ' + (d ? fmt(d) : total);
+      btn.textContent = audio.paused ? 'Hear' : 'Pause';
+    };
+    btn.addEventListener('click', function () {
+      if (audio.paused) {
+        players.forEach(function (p) { if (p !== audio) p.pause(); });
+        audio.play();
+      } else {
+        audio.pause();
+      }
+    });
+    bar.addEventListener('click', function (e) {
+      var r = bar.getBoundingClientRect();
+      var frac = Math.min(1, Math.max(0, (e.clientX - r.left) / r.width));
+      if (audio.duration) { audio.currentTime = frac * audio.duration; }
+      else { audio.addEventListener('loadedmetadata', function () { audio.currentTime = frac * audio.duration; }, { once: true }); audio.load(); }
+      render();
+    });
+    ['play', 'pause', 'timeupdate', 'ended', 'loadedmetadata', 'seeked'].forEach(function (ev) {
+      audio.addEventListener(ev, render);
+    });
+    render();
+  });
+})();
+</script>
+</body>
+</html>

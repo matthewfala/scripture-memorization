@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scripture Songs · Foundational Series</title>
+<meta name="description" content="The sixty verses of the Foundational Series, Packets A to E, sung word for word from the King James Version. Listen online or download the recordings.">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #fbfaf6;
+    --paper-edge: #f0ede4;
+    --ink: #17150f;
+    --ink-2: #4b4740;
+    --ink-3: #7a756c;
+    --hairline: #d6d2c8;
+    --rule: #17150f;
+    --red: #b1261c;
+    --red-soft: #f6e4e1;
+    --cover: #151311;
+    --cover-hi: #26221e;
+    --gold: #cfa54a;
+    --gold-hi: #f0d78c;
+    --serif: "Source Serif 4", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    --sans: "Source Sans 3", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html { background: var(--cover); }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 17.5px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+
+  /* ---------- The cover ---------- */
+  .cover {
+    position: relative;
+    background-color: #17140f;
+    background-image:
+      radial-gradient(ellipse 90% 120% at 50% -20%, rgba(255,235,190,0.10), transparent 60%),
+      linear-gradient(180deg, #1c1813 0%, #15120e 100%);
+    color: var(--gold);
+    padding: 3.4rem 1.5rem 3rem;
+    overflow: hidden;
+  }
+  .cover::before {
+    /* leather grain */
+    content: "";
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.9  0 0 0 0 0.8  0 0 0 0 0.6  0 0 0 0.16 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+    opacity: 0.9;
+    pointer-events: none;
+  }
+  .cover .stamp {
+    position: relative;
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 2.4rem 1.5rem 2.1rem;
+    text-align: center;
+    border: 1px solid #a8862f;
+    box-shadow:
+      inset 0 0 0 4px #17140f,
+      inset 0 0 0 5px #7d6323,
+      0 1px 0 rgba(255,255,255,0.05),
+      inset 0 1px 0 rgba(0,0,0,0.6);
+  }
+  .foil {
+    background: linear-gradient(180deg, #f7e6ad 0%, #e2c069 38%, #b8923f 50%, #efd68a 62%, #c9a24a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 1px 0 rgba(0,0,0,0.75));
+  }
+  .cover .series {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 0.74rem;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    margin: 0 0 1.2rem 0.26em;
+    color: #c7a352;
+  }
+  .cover h1 {
+    font-weight: 700;
+    font-size: clamp(2.3rem, 6vw, 3.8rem);
+    line-height: 1.05;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 0;
+    display: inline-block;
+  }
+  .cover .orn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    margin: 1.1rem auto 0.9rem;
+    max-width: 16rem;
+    color: #c7a352;
+  }
+  .cover .orn::before, .cover .orn::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #b8923f);
+  }
+  .cover .orn::after { background: linear-gradient(90deg, #b8923f, transparent); }
+  .cover .orn svg { width: 0.7rem; height: 0.7rem; fill: #d9b65c; }
+  .cover .sub {
+    font-style: italic;
+    font-size: 1.12rem;
+    margin: 0;
+    color: #d9b65c;
+  }
+  .cover .kjv {
+    font-family: var(--sans);
+    font-size: 0.74rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin: 1.3rem 0 0 0.22em;
+    color: #b8923f;
+  }
+  .gilt {
+    height: 6px;
+    background:
+      repeating-linear-gradient(180deg, rgba(255,255,255,0.18) 0 1px, transparent 1px 2px),
+      linear-gradient(90deg, #9c7526, #e9cd83 25%, #bf9a45 50%, #f1dc9d 75%, #9c7526);
+    border-bottom: 1px solid #5a4418;
+  }
+
+  /* ---------- Pages ---------- */
+  .page {
+    max-width: 62rem;
+    margin: 0 auto;
+    padding: 2.6rem 1.5rem 4rem;
+  }
+  .preface {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    gap: 2.5rem 3.5rem;
+    align-items: start;
+    padding-bottom: 2.2rem;
+    border-bottom: 2px solid var(--rule);
+  }
+  .preface h2 {
+    font-size: 1.9rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin: 0 0 0.8rem;
+  }
+  .preface p { margin: 0 0 0.9rem; color: var(--ink-2); }
+  .preface p:last-child { margin-bottom: 0; }
+  .preface blockquote {
+    margin: 1.3rem 0 0;
+    padding-left: 1rem;
+    border-left: 3px solid var(--red);
+    font-style: italic;
+    color: var(--ink);
+  }
+  .preface blockquote cite {
+    display: block;
+    margin-top: 0.25rem;
+    font-style: normal;
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    color: var(--red);
+    letter-spacing: 0.04em;
+  }
+
+  .contents { border-top: 1px solid var(--rule); padding-top: 0.5rem; }
+  .contents h3 {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin: 0.4rem 0 0.6rem;
+    color: var(--ink-3);
+  }
+  .contents ol { list-style: none; margin: 0; padding: 0; }
+  .contents li {
+    display: grid;
+    grid-template-columns: 1.6rem 1fr auto;
+    align-items: baseline;
+    gap: 0.5rem;
+    padding: 0.42rem 0;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .contents li:last-child { border-bottom: 0; }
+  .contents .l { color: var(--red); font-weight: 700; }
+  .contents a { text-decoration: none; }
+  .contents a:hover { text-decoration: underline; text-decoration-color: var(--red); text-underline-offset: 3px; }
+  .contents .t { font-family: var(--sans); font-size: 0.9rem; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+  .contents .all {
+    margin-top: 1.1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.6rem 1rem;
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    color: var(--ink-3);
+  }
+
+  .btn {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 0.92rem;
+    text-decoration: none;
+    border: 1.5px solid var(--ink);
+    color: var(--ink);
+    background: transparent;
+    padding: 0.5rem 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    line-height: 1.2;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  .btn:hover { background: var(--ink); color: var(--paper); }
+  .btn.primary { background: var(--ink); color: var(--paper); }
+  .btn.primary:hover { background: var(--red); border-color: var(--red); }
+  .btn svg { width: 1em; height: 1em; }
+
+  /* ---------- Chapters (packets) ---------- */
+  .packet {
+    display: grid;
+    grid-template-columns: 5.5rem minmax(0, 1fr);
+    gap: 0 2rem;
+    padding: 2.4rem 0 2.2rem;
+    border-bottom: 1px solid var(--hairline);
+    scroll-margin-top: 1rem;
+  }
+  .packet:last-of-type { border-bottom: 2px solid var(--rule); }
+  .packet .chap {
+    color: var(--red);
+    font-weight: 700;
+    font-size: 4.6rem;
+    line-height: 0.85;
+    text-align: center;
+    padding-top: 0.15rem;
+  }
+  .packet .chap small {
+    display: block;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-top: 0.7rem;
+    color: var(--ink-3);
+  }
+  .packet header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.4rem 0.9rem;
+    margin-bottom: 0.3rem;
+  }
+  .packet h2 {
+    font-size: 1.85rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin: 0;
+  }
+  .tag {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 0.15rem 0.5rem;
+    border: 1px solid var(--ink-3);
+    color: var(--ink-2);
+    position: relative;
+    top: -0.2rem;
+  }
+  .tag.locked { color: var(--red); border-color: var(--red); background: var(--red-soft); }
+  .packet .meta {
+    font-family: var(--sans);
+    font-size: 0.92rem;
+    color: var(--ink-3);
+    margin: 0 0 0.9rem;
+  }
+  .packet .meta span + span::before { content: "·"; margin: 0 0.5rem; }
+  .packet .sound { margin: 0 0 1.2rem; color: var(--ink-2); max-width: 44rem; }
+  .packet .sound b { color: var(--ink); font-weight: 600; }
+
+  .verses {
+    list-style: none;
+    margin: 0 0 1.4rem;
+    padding: 0;
+    columns: 2;
+    column-gap: 2.5rem;
+    column-rule: 1px solid var(--hairline);
+  }
+  .verses li {
+    break-inside: avoid;
+    padding: 0.3rem 0;
+    line-height: 1.4;
+  }
+  .verses li {
+    padding-left: 0.85rem;
+    border-left: 2px solid var(--red);
+    margin: 0.35rem 0 0.6rem;
+  }
+  .verses b { font-weight: 600; }
+  .verses .r {
+    display: block;
+    color: var(--ink-2);
+    font-size: 0.95em;
+  }
+
+  /* ---------- Player ---------- */
+  .player {
+    display: grid;
+    grid-template-columns: auto 1fr auto auto auto;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 0.9rem 0 0;
+    border-top: 1px solid var(--rule);
+  }
+  .player .play {
+    width: 2.7rem; height: 2.7rem;
+    border-radius: 50%;
+    border: 0;
+    background: var(--ink);
+    color: var(--paper);
+    cursor: pointer;
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 0;
+    flex: none;
+  }
+  .player .play:hover { background: var(--red); }
+  .player .play svg { width: 1.1rem; height: 1.1rem; fill: currentColor; }
+  .player .play .ic-pause { display: none; }
+  .player .play.playing .ic-play { display: none; }
+  .player .play.playing .ic-pause { display: block; }
+  .player .track {
+    position: relative;
+    height: 1.4rem;
+    cursor: pointer;
+  }
+  .player .track::before {
+    content: "";
+    position: absolute; left: 0; right: 0; top: 50%;
+    height: 4px; margin-top: -2px;
+    background: var(--hairline);
+  }
+  .player .track i {
+    position: absolute; left: 0; top: 50%;
+    height: 4px; margin-top: -2px;
+    width: 0; background: var(--red);
+    pointer-events: none;
+  }
+  .player .track i::after {
+    content: "";
+    position: absolute; right: -6px; top: -4px;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--red);
+  }
+  .player .time {
+    font-family: var(--sans);
+    font-variant-numeric: tabular-nums;
+    font-size: 0.92rem;
+    color: var(--ink-3);
+    white-space: nowrap;
+    min-width: 6.5rem;
+    text-align: right;
+  }
+  .player .loop {
+    width: 2.2rem; height: 2.2rem;
+    border-radius: 50%;
+    border: 1.5px solid var(--hairline);
+    background: transparent;
+    color: var(--ink-3);
+    cursor: pointer;
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 0;
+  }
+  .player .loop svg { width: 1.05rem; height: 1.05rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .player .loop:hover { border-color: var(--ink); color: var(--ink); }
+  .player .loop[aria-pressed="true"] { background: var(--red); border-color: var(--red); color: var(--paper); }
+
+  .listen {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem 0.9rem;
+    margin-top: 0.9rem;
+    padding-top: 0.9rem;
+    border-top: 1px solid var(--hairline);
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    color: var(--ink-3);
+  }
+  .listen .btn[aria-pressed="true"] { background: var(--red); border-color: var(--red); color: var(--paper); }
+  .no-js .listen, .no-js .player .loop { display: none; }
+
+  .now {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    z-index: 10;
+    background: #17140f;
+    color: var(--paper);
+    border-top: 1px solid #5a4418;
+    box-shadow: 0 -8px 24px rgba(0,0,0,0.25);
+    font-family: var(--sans);
+  }
+  .now .in {
+    max-width: 62rem;
+    margin: 0 auto;
+    padding: 0.55rem 1.5rem;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto auto;
+    align-items: center;
+    gap: 0.9rem;
+  }
+  .now button {
+    font: inherit;
+    font-weight: 600;
+    font-size: 0.85rem;
+    background: transparent;
+    color: var(--gold-hi);
+    border: 1px solid #7d6323;
+    padding: 0.4rem 0.75rem;
+    cursor: pointer;
+    white-space: nowrap;
+    display: inline-flex; align-items: center; gap: 0.4rem;
+  }
+  .now button:hover { background: #2a241c; }
+  .now button svg { width: 0.95rem; height: 0.95rem; fill: currentColor; }
+  .now .tog { width: 2.4rem; height: 2.4rem; padding: 0; justify-content: center; border-radius: 50%; background: var(--gold-hi); color: #17140f; border-color: var(--gold-hi); }
+  .now .tog:hover { background: #fff3c4; }
+  .now .tog .ic-pause { display: none; }
+  .now .tog.playing .ic-play { display: none; }
+  .now .tog.playing .ic-pause { display: block; }
+  .now .what { min-width: 0; line-height: 1.25; }
+  .now .what small { display: block; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: #c7a352; }
+  .now .what a { font-family: var(--serif); font-size: 1.05rem; color: var(--paper); text-decoration: none; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .now .what a:hover { text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 3px; }
+  .now .mode { font-size: 0.8rem; color: #c7a352; white-space: nowrap; }
+  body.has-now { padding-bottom: 4.6rem; }
+  @media (max-width: 640px) {
+    .now .in { grid-template-columns: auto minmax(0, 1fr) auto; padding: 0.5rem 0.9rem; gap: 0.7rem; }
+    .now .mode { display: none; }
+    .now .next span { display: none; }
+  }
+
+  .player audio { display: none; }
+  .no-js .player audio { display: block; grid-column: 1 / -1; width: 100%; }
+  .no-js .player .play, .no-js .player .track, .no-js .player .time { display: none; }
+
+  /* ---------- Notes ---------- */
+  .notes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 1.5rem 3rem;
+    padding: 2rem 0 0;
+  }
+  .notes h3 {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin: 0 0 0.5rem;
+  }
+  .notes p { margin: 0; color: var(--ink-2); font-size: 0.98rem; }
+  footer {
+    text-align: center;
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    color: var(--ink-3);
+    padding: 2.5rem 1.5rem 0;
+  }
+  footer .fleuron { color: var(--red); font-size: 1.4rem; line-height: 1; margin-bottom: 0.5rem; }
+
+  /* ---------- Narrow screens ---------- */
+  @media (max-width: 760px) {
+    .preface { grid-template-columns: 1fr; gap: 1.8rem; }
+    .packet { grid-template-columns: 1fr; }
+    .packet .chap {
+      display: flex; align-items: baseline; gap: 0.8rem;
+      text-align: left; font-size: 3rem; margin-bottom: 0.5rem;
+    }
+    .packet .chap small { margin: 0; }
+    .verses { columns: 1; }
+    .player { grid-template-columns: auto 1fr; }
+    .player .loop { grid-column: 1; justify-self: center; }
+    .player .time { grid-column: 2; text-align: left; min-width: 0; }
+    .player .dl { grid-column: 1 / -1; justify-self: start; }
+  }
+  @media (max-width: 480px) {
+    body { font-size: 16.5px; }
+    .cover { padding: 2.2rem 1rem 2rem; }
+    .cover .stamp { padding: 1.7rem 1rem 1.5rem; }
+    .contents .all { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body class="no-js">
+<script>document.body.classList.remove('no-js');</script>
+
+<header class="cover">
+  <div class="stamp">
+    <p class="series">The Foundational Series</p>
+    <h1 class="foil">Scripture Songs</h1>
+    <div class="orn" aria-hidden="true"><svg viewBox="0 0 10 10"><path d="M5 0l5 5-5 5-5-5z"/></svg></div>
+    <p class="sub">Sixty verses in five packets, set to music</p>
+    <p class="kjv">King James Version</p>
+  </div>
+</header>
+<div class="gilt"></div>
+
+<main class="page">
+
+  <section class="preface">
+    <div>
+      <h2>Verses you can carry in your head</h2>
+      <p>Each packet of the Foundational Series holds twelve memory verses on six topics. Here every packet is sung straight through, word for word from the King James Version, with the reference sung after each verse so the address is learned along with the words.</p>
+      <p>Every packet has its own musical style, chosen so that the tunes stay apart in memory. Listen here, or download the recordings to keep.</p>
+      <blockquote>Thy word have I hid in mine heart, that I might not sin against thee.<cite>Psalm 119:11</cite></blockquote>
+    </div>
+    <nav class="contents" aria-label="Contents">
+      <h3>Contents</h3>
+      <ol>
+        <li><span class="l">A</span><a href="#packet-a">Live the New Life</a><span class="t">Folk · 5:21</span></li>
+        <li><span class="l">B</span><a href="#packet-b">Proclaim Christ</a><span class="t">Gospel · 4:08</span></li>
+        <li><span class="l">C</span><a href="#packet-c">Rely on God's Resources</a><span class="t">Ballad · 5:44</span></li>
+        <li><span class="l">D</span><a href="#packet-d">Be Christ's Disciples</a><span class="t">Bluegrass · 5:03</span></li>
+        <li><span class="l">E</span><a href="#packet-e">Grow in Christlikeness</a><span class="t">Choral · 4:59</span></li>
+      </ol>
+      <div class="all">
+        <span style="white-space: nowrap;">Five recordings · 25 min 16 s</span>
+        <a class="btn primary" href="/navigators-official-songs.zip" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 20h16"/></svg>
+          Download all five (zip, 35 MB)
+        </a>
+      </div>
+      <div class="listen">
+        <button class="btn shuffle" type="button" aria-pressed="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M4 20 21 3"/><path d="M21 16v5h-5"/><path d="m15 15 6 6"/><path d="m4 4 5 5"/></svg>
+          Shuffle all
+        </button>
+        <span>Plays the five packets in random order and keeps going.</span>
+      </div>
+    </nav>
+  </section>
+
+  <!-- ===== A ===== -->
+  <article class="packet" id="packet-a">
+    <div class="chap">A<small>Packet</small></div>
+    <div>
+      <header><h2>Live the New Life</h2><span class="tag locked">Locked</span></header>
+      <p class="meta"><span>Jesus Movement folk</span><span>88 BPM</span><span>5:21</span></p>
+      <p class="sound"><b>The sound.</b> Fingerpicked acoustic guitar, close vocal harmony, and the warmth of 1972 analog tape. Earnest and unhurried.</p>
+      <ul class="verses">
+        <li><b>Christ the Center</b><span class="r">2 Corinthians 5:17 · Galatians 2:20</span></li>
+        <li><b>Obedience to Christ</b><span class="r">Romans 12:1 · John 14:21</span></li>
+        <li><b>The Word</b><span class="r">2 Timothy 3:16 · Joshua 1:8</span></li>
+        <li><b>Prayer</b><span class="r">John 15:7 · Philippians 4:6–7</span></li>
+        <li><b>Fellowship</b><span class="r">Matthew 18:20 · Hebrews 10:24–25</span></li>
+        <li><b>Witnessing</b><span class="r">Matthew 4:19 · Romans 1:16</span></li>
+      </ul>
+      <div class="player">
+        <button class="play" type="button" aria-label="Play Packet A"><svg class="ic-play" viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg><svg class="ic-pause" viewBox="0 0 24 24"><path d="M6 4h4.5v16H6zM13.5 4H18v16h-4.5z"/></svg></button>
+        <div class="track" role="slider" aria-label="Position in Packet A"><i></i></div>
+        <span class="time">0:00 / 5:21</span>
+        <button class="loop" type="button" aria-pressed="false" aria-label="Repeat Packet A" title="Repeat this packet"><svg viewBox="0 0 24 24"><path d="M17 2l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></button>
+        <a class="btn dl" href="/packet-a.mp3" download="Packet A - Live the New Life.mp3">Download MP3 · 7.5 MB</a>
+        <audio preload="none" src="/packet-a.mp3" controls></audio>
+      </div>
+    </div>
+  </article>
+
+  <!-- ===== B ===== -->
+  <article class="packet" id="packet-b">
+    <div class="chap">B<small>Packet</small></div>
+    <div>
+      <header><h2>Proclaim Christ</h2><span class="tag">Proposed</span></header>
+      <p class="meta"><span>Contemporary gospel soul</span><span>112 BPM</span><span>4:08</span></p>
+      <p class="sound"><b>The sound.</b> Hammond organ, piano and handclaps, with a soaring lead answered by backing singers. Jubilant and triumphant.</p>
+      <ul class="verses">
+        <li><b>All Have Sinned</b><span class="r">Romans 3:23 · Isaiah 53:6</span></li>
+        <li><b>Sin's Penalty</b><span class="r">Romans 6:23 · Hebrews 9:27</span></li>
+        <li><b>Christ Paid the Penalty</b><span class="r">Romans 5:8 · 1 Peter 3:18</span></li>
+        <li><b>Salvation Not by Works</b><span class="r">Ephesians 2:8–9 · Titus 3:5</span></li>
+        <li><b>Must Receive Christ</b><span class="r">John 1:12 · Revelation 3:20</span></li>
+        <li><b>Assurance of Salvation</b><span class="r">1 John 5:13 · John 5:24</span></li>
+      </ul>
+      <div class="player">
+        <button class="play" type="button" aria-label="Play Packet B"><svg class="ic-play" viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg><svg class="ic-pause" viewBox="0 0 24 24"><path d="M6 4h4.5v16H6zM13.5 4H18v16h-4.5z"/></svg></button>
+        <div class="track" role="slider" aria-label="Position in Packet B"><i></i></div>
+        <span class="time">0:00 / 4:08</span>
+        <button class="loop" type="button" aria-pressed="false" aria-label="Repeat Packet B" title="Repeat this packet"><svg viewBox="0 0 24 24"><path d="M17 2l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></button>
+        <a class="btn dl" href="/packet-b.mp3" download="Packet B - Proclaim Christ.mp3">Download MP3 · 5.5 MB</a>
+        <audio preload="none" src="/packet-b.mp3" controls></audio>
+      </div>
+    </div>
+  </article>
+
+  <!-- ===== C ===== -->
+  <article class="packet" id="packet-c">
+    <div class="chap">C<small>Packet</small></div>
+    <div>
+      <header><h2>Rely on God's Resources</h2><span class="tag">Proposed</span></header>
+      <p class="meta"><span>Eighties soft rock ballad</span><span>68 BPM</span><span>5:44</span></p>
+      <p class="sound"><b>The sound.</b> Warm piano, clean electric guitar and lush synth pads under a single expressive voice, with a polished 1985 studio sheen. Tender and heartfelt.</p>
+      <ul class="verses">
+        <li><b>His Spirit</b><span class="r">1 Corinthians 3:16 · 1 Corinthians 2:12</span></li>
+        <li><b>His Strength</b><span class="r">Isaiah 41:10 · Philippians 4:13</span></li>
+        <li><b>His Faithfulness</b><span class="r">Lamentations 3:22–23 · Numbers 23:19</span></li>
+        <li><b>His Peace</b><span class="r">Isaiah 26:3 · 1 Peter 5:7</span></li>
+        <li><b>His Provision</b><span class="r">Romans 8:32 · Philippians 4:19</span></li>
+        <li><b>His Help in Temptation</b><span class="r">Hebrews 2:18 · Psalm 119:9, 11</span></li>
+      </ul>
+      <div class="player">
+        <button class="play" type="button" aria-label="Play Packet C"><svg class="ic-play" viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg><svg class="ic-pause" viewBox="0 0 24 24"><path d="M6 4h4.5v16H6zM13.5 4H18v16h-4.5z"/></svg></button>
+        <div class="track" role="slider" aria-label="Position in Packet C"><i></i></div>
+        <span class="time">0:00 / 5:44</span>
+        <button class="loop" type="button" aria-pressed="false" aria-label="Repeat Packet C" title="Repeat this packet"><svg viewBox="0 0 24 24"><path d="M17 2l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></button>
+        <a class="btn dl" href="/packet-c.mp3" download="Packet C - Rely on God's Resources.mp3">Download MP3 · 7.6 MB</a>
+        <audio preload="none" src="/packet-c.mp3" controls></audio>
+      </div>
+    </div>
+  </article>
+
+  <!-- ===== D ===== -->
+  <article class="packet" id="packet-d">
+    <div class="chap">D<small>Packet</small></div>
+    <div>
+      <header><h2>Be Christ's Disciples</h2><span class="tag">Proposed</span></header>
+      <p class="meta"><span>Bluegrass revival</span><span>126 BPM</span><span>5:03</span></p>
+      <p class="sound"><b>The sound.</b> Driving banjo, flatpicked guitar, fiddle and upright bass, with a man and a woman trading verses. Bright and joyful.</p>
+      <ul class="verses">
+        <li><b>Put Christ First</b><span class="r">Matthew 6:33 · Luke 9:23</span></li>
+        <li><b>Separate from the World</b><span class="r">1 John 2:15–16 · Romans 12:2</span></li>
+        <li><b>Be Steadfast</b><span class="r">1 Corinthians 15:58 · Hebrews 12:3</span></li>
+        <li><b>Serve Others</b><span class="r">Mark 10:45 · 2 Corinthians 4:5</span></li>
+        <li><b>Give Generously</b><span class="r">Proverbs 3:9–10 · 2 Corinthians 9:6–7</span></li>
+        <li><b>Develop World Vision</b><span class="r">Acts 1:8 · Matthew 28:19–20</span></li>
+      </ul>
+      <div class="player">
+        <button class="play" type="button" aria-label="Play Packet D"><svg class="ic-play" viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg><svg class="ic-pause" viewBox="0 0 24 24"><path d="M6 4h4.5v16H6zM13.5 4H18v16h-4.5z"/></svg></button>
+        <div class="track" role="slider" aria-label="Position in Packet D"><i></i></div>
+        <span class="time">0:00 / 5:03</span>
+        <button class="loop" type="button" aria-pressed="false" aria-label="Repeat Packet D" title="Repeat this packet"><svg viewBox="0 0 24 24"><path d="M17 2l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></button>
+        <a class="btn dl" href="/packet-d.mp3" download="Packet D - Be Christ's Disciples.mp3">Download MP3 · 6.7 MB</a>
+        <audio preload="none" src="/packet-d.mp3" controls></audio>
+      </div>
+    </div>
+  </article>
+
+  <!-- ===== E ===== -->
+  <article class="packet" id="packet-e">
+    <div class="chap">E<small>Packet</small></div>
+    <div>
+      <header><h2>Grow in Christlikeness</h2><span class="tag">Proposed</span></header>
+      <p class="meta"><span>Sacred choral hymn</span><span>96 BPM</span><span>4:59</span></p>
+      <p class="sound"><b>The sound.</b> A full choir over the great pipe organ, carrying a clear hymn melody in a reverberant cathedral. Stately and reverent.</p>
+      <ul class="verses">
+        <li><b>Love</b><span class="r">John 13:34–35 · 1 John 3:18</span></li>
+        <li><b>Humility</b><span class="r">Philippians 2:3–4 · 1 Peter 5:5–6</span></li>
+        <li><b>Purity</b><span class="r">Ephesians 5:3 · 1 Peter 2:11</span></li>
+        <li><b>Honesty</b><span class="r">Leviticus 19:11 · Acts 24:16</span></li>
+        <li><b>Faith</b><span class="r">Hebrews 11:6 · Romans 4:20–21</span></li>
+        <li><b>Good Works</b><span class="r">Galatians 6:9–10 · Matthew 5:16</span></li>
+      </ul>
+      <div class="player">
+        <button class="play" type="button" aria-label="Play Packet E"><svg class="ic-play" viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg><svg class="ic-pause" viewBox="0 0 24 24"><path d="M6 4h4.5v16H6zM13.5 4H18v16h-4.5z"/></svg></button>
+        <div class="track" role="slider" aria-label="Position in Packet E"><i></i></div>
+        <span class="time">0:00 / 4:59</span>
+        <button class="loop" type="button" aria-pressed="false" aria-label="Repeat Packet E" title="Repeat this packet"><svg viewBox="0 0 24 24"><path d="M17 2l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></button>
+        <a class="btn dl" href="/packet-e.mp3" download="Packet E - Grow in Christlikeness.mp3">Download MP3 · 6.5 MB</a>
+        <audio preload="none" src="/packet-e.mp3" controls></audio>
+      </div>
+    </div>
+  </article>
+
+  <section class="notes">
+    <div>
+      <h3>How to use them</h3>
+      <p>Use the repeat button on a packet to play it over and over while you learn it. The reference is sung after each verse, so say the address with the words. Once the packets are solid, use Shuffle all to keep them fresh in any order.</p>
+    </div>
+    <div>
+      <h3>Locked and Proposed</h3>
+      <p>Packet A is the recording already being memorized and will not change. Packets marked Proposed are the best takes made so far and may still be replaced by a better one.</p>
+    </div>
+    <div>
+      <h3>Text</h3>
+      <p>Every verse is sung from the King James Version, which is in the public domain. The verse selection follows the Sixty-Pack of the Foundational Series.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="fleuron">❦</div>
+    Scripture Songs · Foundational Series · 2026
+  </footer>
+</main>
+
+<div class="now" hidden>
+  <div class="in">
+    <button class="tog" type="button" aria-label="Pause"><svg class="ic-play" viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg><svg class="ic-pause" viewBox="0 0 24 24"><path d="M6 4h4.5v16H6zM13.5 4H18v16h-4.5z"/></svg></button>
+    <div class="what"><small>Now playing</small><a href="#"></a></div>
+    <span class="mode"></span>
+    <button class="next" type="button"><span>Next</span> <svg viewBox="0 0 24 24"><path d="M5 4l10 8-10 8z"/><path d="M17 4h2v16h-2z"/></svg></button>
+  </div>
+</div>
+
+<script>
+(function () {
+  var fmt = function (sec) {
+    sec = Math.max(0, Math.floor(sec || 0));
+    return Math.floor(sec / 60) + ':' + ('0' + (sec % 60)).slice(-2);
+  };
+  var players = [];
+  var shuffle = false;
+  var current = -1;
+  var now = document.querySelector('.now');
+  var nowTog = now.querySelector('.tog');
+  var nowLink = now.querySelector('.what a');
+  var nowMode = now.querySelector('.mode');
+  var nowNext = now.querySelector('.next');
+  var shuffleBtn = document.querySelector('.listen .shuffle');
+
+  var renderNow = function () {
+    var p = current >= 0 ? players[current] : null;
+    var show = !!p && (!p.audio.paused || shuffle);
+    now.hidden = !show;
+    document.body.classList.toggle('has-now', show);
+    if (!p) return;
+    nowTog.classList.toggle('playing', !p.audio.paused);
+    nowTog.setAttribute('aria-label', p.audio.paused ? 'Play' : 'Pause');
+    nowLink.textContent = 'Packet ' + p.letter + ' · ' + p.title;
+    nowLink.setAttribute('href', '#' + p.article.id);
+    nowMode.textContent = p.audio.loop ? 'Repeating this packet' : (shuffle ? 'Shuffle · repeats forever' : '');
+  };
+
+  var randomOther = function (i) {
+    if (players.length < 2) return i;
+    var j;
+    do { j = Math.floor(Math.random() * players.length); } while (j === i);
+    return j;
+  };
+
+  var playIdx = function (i) {
+    players.forEach(function (o, k) { if (k !== i) o.audio.pause(); });
+    current = i;
+    var pr = players[i].audio.play();
+    if (pr && pr.catch) pr.catch(function () {});
+    renderNow();
+  };
+
+  var setShuffle = function (on) {
+    shuffle = on;
+    shuffleBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    shuffleBtn.lastChild.textContent = on ? ' Shuffle on' : ' Shuffle all';
+    if (on) {
+      players.forEach(function (o) { o.audio.loop = false; o.loop.setAttribute('aria-pressed', 'false'); });
+      var playing = players.findIndex(function (o) { return !o.audio.paused; });
+      if (playing < 0) playIdx(Math.floor(Math.random() * players.length));
+    }
+    players.forEach(function (o) { o.render(); });
+    renderNow();
+  };
+
+  shuffleBtn.addEventListener('click', function () { setShuffle(!shuffle); });
+  nowTog.addEventListener('click', function () {
+    if (current < 0) return;
+    var a = players[current].audio;
+    if (a.paused) playIdx(current); else a.pause();
+  });
+  nowNext.addEventListener('click', function () {
+    if (current < 0) return;
+    playIdx(shuffle ? randomOther(current) : (current + 1) % players.length);
+  });
+
+  document.querySelectorAll('.player').forEach(function (p, i) {
+    var article = p.closest('article');
+    var audio = p.querySelector('audio');
+    var btn = p.querySelector('.play');
+    var track = p.querySelector('.track');
+    var fill = track.querySelector('i');
+    var time = p.querySelector('.time');
+    var loop = p.querySelector('.loop');
+    var total = time.textContent.split('/')[1].trim();
+    audio.removeAttribute('controls');
+    var o = {
+      audio: audio, loop: loop, article: article,
+      letter: article.querySelector('.chap').firstChild.textContent.trim(),
+      title: article.querySelector('h2').textContent.trim()
+    };
+    o.render = function () {
+      var d = audio.duration || 0, t = audio.currentTime || 0;
+      fill.style.width = d ? (100 * t / d) + '%' : '0%';
+      time.textContent = fmt(t) + ' / ' + (d ? fmt(d) : total);
+      btn.classList.toggle('playing', !audio.paused);
+      btn.setAttribute('aria-label', (audio.paused ? 'Play ' : 'Pause ') + 'Packet ' + o.letter);
+      loop.setAttribute('aria-pressed', audio.loop ? 'true' : 'false');
+    };
+    players.push(o);
+
+    btn.addEventListener('click', function () {
+      if (audio.paused) playIdx(i); else audio.pause();
+    });
+    loop.addEventListener('click', function () {
+      audio.loop = !audio.loop;
+      if (audio.loop && shuffle) setShuffle(false);
+      o.render(); renderNow();
+    });
+    track.addEventListener('click', function (e) {
+      var r = track.getBoundingClientRect();
+      var frac = Math.min(1, Math.max(0, (e.clientX - r.left) / r.width));
+      if (audio.duration) { audio.currentTime = frac * audio.duration; }
+      else { audio.addEventListener('loadedmetadata', function () { audio.currentTime = frac * audio.duration; }, { once: true }); audio.load(); }
+      o.render();
+    });
+    audio.addEventListener('ended', function () {
+      if (shuffle) playIdx(randomOther(i));
+      else { o.render(); renderNow(); }
+    });
+    ['play', 'pause', 'timeupdate', 'loadedmetadata', 'seeked'].forEach(function (ev) {
+      audio.addEventListener(ev, function () { o.render(); if (ev === 'play') { current = i; } if (ev !== 'timeupdate') renderNow(); });
+    });
+    o.render();
+  });
+})();
+</script>
+</body>
+</html>
