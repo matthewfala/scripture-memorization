@@ -84,8 +84,32 @@ None. No windows fell below the melodicity threshold.
 - No cloud services were used for either check; faster-whisper model weights are downloaded once from Hugging Face and cached locally, then all inference runs on-device.
 - Final judgment belongs to the human ear; this tool exists to prioritize listening time, not replace it.
 
+## Verification Addendum (medium-model re-check, 2026-09-02)
+
+Round-1 lyric-fidelity used faster-whisper `small`. Choral reverb ("sacred
+choral hymn... reverberant 1960s cathedral recording") was suspected to
+degrade that model specifically, so the round-1 MISSING and repeat findings
+were re-checked against a full-track re-transcription with faster-whisper
+`medium` (still local CPU, int8; model weights downloaded once from
+Hugging Face and cached — no cloud inference). Transcript saved at
+`packet_e_take1_medium_segments.json` in the scratch directory.
+
+| Finding (round 1) | Verdict | Evidence |
+|---|---|---|
+| Lines 28–32 MISSING: "Ee Seven and Ee Eight" / Leviticus 19:11 sandwich / Acts 24:16 sandwich (the "Honesty" topic) | **ASR_MISS** | Medium-model transcript, `[185.3–223.3]`: *"Honesty." / "E7 and E8, Leviticus 1911. Ye shall not steal, neither deal falsely, neither lie one to another." / "Leviticus 1911, Acts 24, 16. And herein do I exercise myself," / "To have always a conscience void of offence toward God and toward men, Acts 24, 16."* — the full topic (designator, both reference sandwiches, both verses) is present almost verbatim, modulo the usual designator/number-format ASR quirks ("E7"/"E8" for "Ee Seven"/"Ee Eight", "1911" for "nineteen eleven"). The `small` model simply failed to transcribe this passage; the content is there. |
+| "Good Works" repeated-beyond-format (expected 1x, observed 2x) | **ASR/algorithm artifact, not a distinct real repeat** | The topic title "Good Works" genuinely appears once, at `[272.2–287.7]`: *"...Good works, E, 11 and E, 12, Galatians 6, 9 to 10..."*. The apparent second occurrence is explained by the confirmed Matthew 5:16 repeat below — that verse's own KJV text contains the phrase "...that they may see your **good works**..." (heard again at `[338.3–347.8]`), a coincidental substring inside a different line's genuine repeat, not a second recitation of the topic-title line itself. |
+| "Matthew five sixteen." repeated-beyond-format (expected 2x, observed 3x) | **REAL** — and more extensive than the single flagged line | Medium transcript shows the expected sandwich completing normally: `[304.8–331.4]` *"Galatians 6, 9 to 10, Matthew 5, 16. Let your light so shine before men," ... "That they may see your good works, and glorify your Father, which is in heaven." ... "Matthew 5, 16. Pack it in." "Growing Christ's sixthness."* (this last pair is almost certainly the closing "Packet Ee" / "Grow in Christlikeness" bookend, badly garbled). Then, instead of ending, the **entire final verse, its reference, and the closing bookend play through a second time**: `[334.8–357.8]` *"Let your light so shine before men." "That they may see your good works, and glorify your Father, which is in heaven." "Matthew 5, 16" "Pagody"* (garbled "Packet Ee" again) — before the track finally closes at `[357.8–363.3]` with a clean *"Grow in Christlikeness."* So the take appears to repeat roughly its last ~30 seconds (final verse + reference + closing title bookend) in full, not just the one reference line the automated check happened to catch cleanly. |
+
+**Answer to the specific question asked:** the Honesty block is *not* actually missing in take1 (see above — it's an ASR miss by the small model). Separately, take2's medium-model transcript (see `screen-packet-e-take2.md` addendum) also confirms its own Honesty block is fully present, and additionally confirms take2's ending plays through only once (no repeat) — unlike take1's confirmed final-section repeat.
+
+**Updated assessment:** packet-e-take1's real, confirmed defect is the outro repeating in full (an extra ~30s of duplicated singing), which does constitute genuine "repeated beyond format" content per the procedure's Purpose statement, not a false positive. This is a real, if minor-in-substance, structural issue — the repeated material is exactly correct text, just sung twice — and is much more substantial than take2's confirmed issue (a single word, "Purity," said twice in a row; see the take2 addendum). If choosing between the two E takes without regenerating, **take2 is the safer pick**: its only confirmed defect is far smaller, and its ending is clean. Regeneration remains a reasonable option if the human wants an outro without any duplication at all, but it is not mandatory — both confirmed issues are minor relative to a fully dropped or altered verse.
+
 ## Human Prompts
 
 #### Initial Document Written On 2026-09-02
 
 - Generated automatically by `screen_song.py` per `navigators/procedures/04-spoken-word-screen.md` (spoken-word + lyric-fidelity screening pass).
+
+#### Document Modification On 2026-09-02
+
+- Coordinator follow-up: re-verify the round-1 "Honesty" MISSING block and the "Good Works" / "Matthew five sixteen." repeat findings with faster-whisper `medium` (stronger model, since choral reverb was suspected to degrade `small`'s accuracy), report REAL / ASR_MISS / UNCLEAR per finding with transcript excerpts and timestamps, and state whether take2 has all its content confirmed present so it could be the safe official pick without regeneration.

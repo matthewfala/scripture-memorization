@@ -87,8 +87,29 @@ None. No windows fell below the melodicity threshold.
 - No cloud services were used for either check; faster-whisper model weights are downloaded once from Hugging Face and cached locally, then all inference runs on-device.
 - Final judgment belongs to the human ear; this tool exists to prioritize listening time, not replace it.
 
+## Verification Addendum (medium-model re-check, 2026-09-02)
+
+Round-1 lyric-fidelity used faster-whisper `small`. Choral reverb was
+suspected to degrade that model, so the round-1 repeat finding (and, per
+the coordinator's request, the Honesty-topic content and the ending) were
+re-checked against a full-track re-transcription with faster-whisper
+`medium` (still local CPU, int8; no cloud inference). Transcript saved at
+`packet_e_take2_medium_segments.json` in the scratch directory.
+
+| Finding | Verdict | Evidence |
+|---|---|---|
+| "Purity" repeated-beyond-format (expected 1x, observed 2x) | **REAL** | Medium-model transcript, `[157.8–165.8]`: *"Purity, purity, E5 and E6, Ephesians 5, 3."* — the topic title is genuinely sung/spoken twice in immediate succession before its designator. This is a small, single-word repeat, not an extra verse or reference. |
+| Honesty-topic content ("Ee Seven and Ee Eight" / Leviticus 19:11 sandwich / Acts 24:16 sandwich) — not flagged in round 1, checked per the coordinator's cross-check request | **PRESENT** | `[202.4–243.8]`: *"Honest E7 and E8, Leviticus 1911." / "He shall not steal, neither deal falsely, neither lie one to another." / "Leviticus 1911, Acts 24-16." / "And herein do I exercise myself, to have always a conscience void of offence toward God and toward men." / "Acts 24, 16."* — full sandwich structure and both verses present, with only the usual minor ASR noise ("Honest" for "Honesty", "He" for "Ye"). |
+| Ending / closing bookend, checked for comparison against take1's confirmed outro repeat | **CLEAN — no repeat** | `[330.3–362.7]` shows the final verse (Matthew 5:16) and its reference play through exactly once — *"Galatians 6, 9, 2, 10, Matthew 5, 16." "Let your lives so shine before men" "that they may see your good works" "and glorify your Father, which is in heaven, Matthew 5, 16."* — followed immediately by a single closing bookend, *"Pocketing, growing, criss-crossed."* (garbled "Packet Ee, Grow in Christlikeness"). No duplicated material, unlike take1. |
+
+**Updated assessment:** packet-e-take2's only confirmed real defect is the single word "Purity" said twice in a row — a minor, low-impact repeat. Its Honesty-topic content is fully present, and its ending is clean (no repeat), in contrast to take1's confirmed full-outro repeat (see `screen-packet-e-take1.md` addendum). Between the two E takes, **take2 is the safer official pick without regeneration**, pending the human confirming both takes' findings by ear.
+
 ## Human Prompts
 
 #### Initial Document Written On 2026-09-02
 
 - Generated automatically by `screen_song.py` per `navigators/procedures/04-spoken-word-screen.md` (spoken-word + lyric-fidelity screening pass).
+
+#### Document Modification On 2026-09-02
+
+- Coordinator follow-up: re-verify the round-1 "Purity" repeat finding with faster-whisper `medium` (stronger model, since choral reverb was suspected to degrade `small`'s accuracy), report REAL / ASR_MISS / UNCLEAR with transcript excerpts and timestamps, and cross-check whether take2's Honesty-topic content and ending are fully present/clean so it could be the safe official pick without regeneration.
