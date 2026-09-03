@@ -50,6 +50,14 @@ full listen), b-take1's first seconds (opening lines unheard by the
 transcriber), d-take2's intro (possible ordering irregularity),
 e-take4's first ~10s (the UNCLEAR finding, only if curious).
 
+## official/ copies (Procedure 06)
+
+`navigators/official/packet-<letter>.mp3` holds the canonical copy of
+each packet's current official take. As of 2026-09-02: a ←
+packet-a-memorized (LOCKED, human-designated); b ← b-take2, c ← c-take2,
+d ← d-take1, e ← e-take3 (all PROPOSED pending human listen). On lock or
+override, update the status here and re-copy per Procedure 06.
+
 ## Human Prompts
 
 #### Initial Document Written On 2026-09-02
@@ -60,3 +68,8 @@ e-take4's first ~10s (the UNCLEAR finding, only if curious).
 
 - Here's the song for packet A I memorized. https://suno.com/s/WuvaIW3gO07diy4P Also can we have the checker check the lyrics match exactly as expected too or else regenerate. Ideally we should select the official song for each lyric/style combo
 - Maybe you can start a loop
+
+#### Document Modification On 2026-09-02 (repeatability pass)
+
+- Are the procedures repeatable by another context?
+- Yes please add these to a new folder in the root repo. Please also add process to copy the official song to another folder denoting the official songs. Please make the entire pipeline process completely repeatable including the file naming conventions and what files to update after when etc.

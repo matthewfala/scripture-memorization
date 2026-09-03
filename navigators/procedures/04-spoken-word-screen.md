@@ -21,10 +21,17 @@ listening; the human ear is the final judge.
 - An audio file in `navigators/songs/` (mp3).
 - `navigators/songs/` also holds the Packet A song, used for calibration.
 
+## Implementation
+
+The scripts live in `tools/` at the repo root (`screen_song.py` is the
+entry point); setup, invocation, and calibration provenance are in
+`tools/README.md`. Packet A's expected lyrics are
+`navigators/lyrics/packet-a.md`.
+
 ## Method — local DSP only
 
-No cloud services and no LLMs. A Python script (virtualenv in the scratch
-directory; dependencies: `librosa`, `numpy`, `soundfile`) that:
+No cloud services and no LLMs. A Python script (dependencies: `librosa`,
+`numpy`, `soundfile`) that:
 
 1. Loads the audio and applies harmonic–percussive separation; runs pYIN
    pitch tracking on the harmonic component.
@@ -60,6 +67,21 @@ Report any A regions still flagged; the human confirms whether they are
 genuinely spoken or false positives. Record the thresholds in every
 report.
 
+## Verification lessons (learned 2026-09-02, binding)
+
+- Small-model flags on short lines — packet bookends, letter+number
+  designators, bare references — are usually transcriber noise, not
+  defects. They concentrate at fades and reverb-heavy passages; the
+  choral-hymn style is the worst case.
+- **No structural finding (missing/repeated/reordered line) may fail a
+  take until re-verified with the `medium` Whisper model** (full-track or
+  bracketed around the finding). Round 1's scariest finding — a whole
+  "missing" topic block — was a small-model miss; the same round hid a
+  real duplicated outro that only medium-model verification pinned down.
+- When two model sizes return *fluent but different* text for the same
+  passage (not a phonetic near-miss), mark it UNCLEAR and refer that
+  timestamp to the human ear rather than ruling either way.
+
 ## Output
 
 Per screened song: `navigators/songs/screen-<songname>.md` containing the
@@ -90,6 +112,8 @@ will memorize:
   the selection (and runner-up status of other takes) in
   `navigators/songs/SONGS.md`. The human may override any selection;
   once a packet's status becomes LOCKED its official take never changes.
+- The selected take is copied to `navigators/official/` under the
+  canonical name — see `06-official-selection.md` for that process.
 
 ## Rules
 
@@ -111,3 +135,8 @@ will memorize:
 #### Document Modification On 2026-09-02
 
 - Here's the song for packet A I memorized. https://suno.com/s/WuvaIW3gO07diy4P Also can we have the checker check the lyrics match exactly as expected too or else regenerate. Ideally we should select the official song for each lyric/style combo
+
+#### Document Modification On 2026-09-02 (repeatability pass)
+
+- Are the procedures repeatable by another context?
+- Yes please add these to a new folder in the root repo. Please also add process to copy the official song to another folder denoting the official songs. Please make the entire pipeline process completely repeatable including the file naming conventions and what files to update after when etc.
