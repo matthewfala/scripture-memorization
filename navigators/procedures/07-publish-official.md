@@ -17,9 +17,6 @@ packet, plus a zip of all five.
 | Bucket | `scripture-memorization-songs`, region `us-east-1`, account 381492251647 (IAM user `Admin`), public-read bucket policy, static website hosting on |
 | Public URL | http://scripture-memorization-songs.s3-website-us-east-1.amazonaws.com/ |
 | Object keys | `index.html`, `packet-<letter>.mp3`, `navigators-official-songs.zip` |
-| Candidate page (typeset design) | source folder `navigators/official/typeset/` (`index.html`, `icon.svg`, `apple-touch-icon.png`), mirrored to keys `typeset/*`, URL http://scripture-memorization-songs.s3-website-us-east-1.amazonaws.com/typeset/ |
-| Candidate page (red-letter design) | source folder `navigators/official/redletter/` (same three files), mirrored to keys `redletter/*`, URL http://scripture-memorization-songs.s3-website-us-east-1.amazonaws.com/redletter/ |
-| Candidate page (masthead design) | source folder `navigators/official/masthead/` (same three files), mirrored to keys `masthead/*`, URL http://scripture-memorization-songs.s3-website-us-east-1.amazonaws.com/masthead/ |
 
 The bucket was created once (2026-09-02) with the human's explicit
 permission; the script never creates or reconfigures it. Object keys
@@ -37,21 +34,7 @@ across re-selection, exactly like the local path (Procedure 06).
    `extracted/packets.md` and `styles.md` and only change if those do.
 3. Run `tools/publish-official.sh` (needs the `aws` CLI with the default
    profile; override `BUCKET`/`REGION` via env if ever needed). It syncs
-   the mp3s, uploads the page, and rebuilds and uploads the zip. Any
-   candidate page listed in the table above is uploaded by hand, file by
-   file, to the keys mirroring its folder (`text/html; charset=utf-8`,
-   `image/svg+xml`, `image/png`; `max-age=60` for the page, 300 for the
-   icons). It references the mp3s and zip by root-relative path, so it
-   needs no copies of its own. Each candidate's icon is a hand-drawn
-   `icon.svg` (typeset: cream leaf, double rule, rubric shape-note;
-   red-letter: black cover, gold rules, gold note; masthead: a woodcut-
-  style decorated initial, black vine foliage on paper around a red
-  Lombardic S, which the page also shows above its title); the 180px
-   `apple-touch-icon.png` is rendered from it in a browser canvas and
-   must be regenerated if the SVG changes. Keep candidate pages in step with `SONGS.md` too (same
-   badge/duration/size edits as step 2) until the human picks one; then
-   the chosen design becomes `index.html` and the other is removed from
-   the repo and the bucket.
+   the mp3s, uploads the page, and rebuilds and uploads the zip.
 4. Open the public URL and check every player loads and each download
    link responds (a quick `curl -I` per key is enough).
 5. Commit the `index.html` change with the selection it reflects
@@ -68,29 +51,18 @@ across re-selection, exactly like the local path (Procedure 06).
 
 ## Notes
 
-- The original page is plain HTML/CSS with no JavaScript. The typeset
-  candidate uses a few lines of inline JavaScript for a styled player
-  (falls back to native `<audio controls>` without JS). Both load fonts
-  from Google Fonts with system fallbacks and use `preload="none"` so
-  page loads stay cheap.
-- Several designs are live at once only while the human is choosing
-  between them (2026-09-03: original at `/`, typeset candidate at
-  `/typeset/`, red-letter candidate at `/redletter/`, masthead candidate
-  at `/masthead/`). The red-letter
-  design is the readability middle ground: modern printed-KJV idiom
-  (black cover band, gilt edge, white paper, red chapter marks, rules
-  instead of cards) in a screen-readable text serif. Its script also
-  provides listening modes: "Shuffle all" (random order, repeats
-  forever, with a fixed now-playing bar and a Next button) and a
-  per-packet repeat toggle (loops one recording forever; turning it on
-  cancels shuffle and vice versa). Next always works: next in order
-  normally, random while shuffling.
-- The masthead design is the red-letter page with the skeuomorphic
-  cover replaced by a typographic masthead on the same paper (title in
-  the body serif, red diamond, epigraph, double rule) so the top and
-  the body speak one visual language; the now-playing bar is ink and
-  red rather than black and gold. Hosting cost is negligible: each page
-  is tens of kilobytes and all candidates share the same mp3 objects.
+- The page is plain HTML/CSS with no JavaScript; fonts load from Google
+  Fonts with system fallbacks. `preload="none"` on the players keeps
+  page loads cheap.
+- Exactly one design is published: `index.html` at the bucket root.
+  Three alternative designs (typeset, red-letter, masthead) were
+  trialled beside it as subfolders on 2026-09-03 and retired on
+  2026-09-04 when the human chose the original; their sources remain
+  in git history (commit 67b3074) should a feature such as the
+  red-letter page's shuffle/repeat controls ever be wanted. If designs
+  are ever compared again, publish candidates under subfolders by hand
+  and remove all but the chosen one from both repo and bucket once the
+  choice is made.
 - For a local preview, `.claude/launch.json` defines `official-preview`,
   a static server on port 8765 rooted at `navigators/official/`, so the
   root-relative mp3 paths resolve.
@@ -112,3 +84,8 @@ across re-selection, exactly like the local path (Procedure 06).
 - I like the redletter version but I feel like the top section is still a bit clashing with the sleek internal portions. I'm thinking it might be better to redesign this rather than continuing with the bible look. What do you think? Please advise with you artistic instinct
 - Please try it! Can you make a v4? I think these are cheap to host right? Also the next button doesn't work when the shuffle is turned off
 - I love the old single character block that is artistically drawn and used in a printing press block. Wondering if we could incorporate that as an icon at the top for flavor
+
+#### Document Modification On 2026-09-04
+
+- II had claude build several s3 web demos. I like the first one still listed here: http://scripture-memorization-songs.s3-website-us-east-1.amazonaws.com
+- Can you delete the others and update the procedure.
