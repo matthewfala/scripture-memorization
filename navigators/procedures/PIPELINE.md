@@ -27,9 +27,12 @@ Procedure 00).
 
 - Lyrics: `navigators/lyrics/packet-<letter>.md` (lowercase letter).
   Sections: `## Style`, `## Lyrics`. Screening reads only `## Lyrics`.
-- Takes: `navigators/songs/packet-<letter>-take<N>.mp3`, N counts
-  across rounds (round 1 → 1,2; round 2 → 3,4; …). Packet A's
-  human-designated recording is `packet-a-memorized.mp3`.
+- Takes: `navigators/songs/packet-<letter>-take<N>.<ext>`, N counts
+  across rounds and series (round 1 → 1,2; round 2 → 3,4; …). `<ext>`
+  is `.mp3` for the 2026-09-02 v5.5 takes; v6 takes are `.m4a` (Suno's
+  Pro download system delivers ~134 kbps AAC m4a or 64 kbps mp3 — take
+  the m4a). Packet A's human-designated recording is
+  `packet-a-memorized.mp3`.
 - Screening reports: `navigators/songs/screen-<mp3-basename>.md`.
 - Vocal stems (screening evidence, Procedure 04 stem mode):
   `navigators/songs/stems/<mp3-basename>-vocals.mp3` (and

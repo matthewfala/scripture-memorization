@@ -20,6 +20,12 @@ B–E PROPOSED (pending sampling).
 | packet-e-take2.mp3 | E | 6:13 | Generated 2026-09-02, v5.5, choral hymn style; runner-up — one confirmed doubled word ("Purity"), otherwise clean |
 | packet-e-take3.mp3 | E | 4:59 | Round 2, 2026-09-02, same lyrics/style; **PROPOSED OFFICIAL** — zero confirmed defects (all flags resolved to transcriber noise) |
 | packet-e-take4.mp3 | E | 5:12 | Round 2, 2026-09-02; close second — one UNCLEAR opening-line finding, needs a ~10s human listen |
+| packet-b-take3.m4a | B | 4:28 | v6 series round 1, 2026-09-15; Suno clip bb18a496; v6 rewrote the style text server-side (input was byte-verified) |
+| packet-b-take4 | B | 4:20 | v6 series round 1, 2026-09-15; Suno clip b4394a32; unlocked, file retrieval pending |
+| packet-d-take3.m4a | D | 4:32 | v6 series round 1, 2026-09-15; Suno clip fb9c4bea |
+| packet-d-take4.m4a | D | 4:40 | v6 series round 1, 2026-09-15; Suno clip cfd39f29 |
+| packet-e-take5.mp3 | E | 5:17 | v6 series round 1, 2026-09-15; Suno clip 17090669 (mp3 64 kbps — Suno's v6 mp3 export; m4a is higher quality) |
+| packet-e-take6.m4a | E | 5:28 | v6 series round 1, 2026-09-15; Suno clip d3900654 |
 
 Screening reports (`screen-*.md`) are produced per Procedure 04.
 
@@ -44,6 +50,15 @@ Round cap (2 of 2) reached.
 Note: the Suno library also contains an accidental extra E generation
 pair (1:40 and 2:00 clips, from a double submission during round 2, not
 downloaded) — safe for the human to trash.
+
+Note (2026-09-15): the v6 round produced six additional stray clips
+beyond the intended pairs (four B: 4:19/4:26/4:34/4:23, two E:
+5:14/5:05 — all full-length, correct title and exact style text,
+apparent phantom submissions). Not downloaded; usable as spare
+candidates if the pools fall short, otherwise safe to trash. Suno's
+new per-song download system (Pro quota, 27/month) delivers m4a
+(~134 kbps AAC) or mp3 (64 kbps); v6 takes are stored as .m4a where
+that's what retrieval yielded.
 
 Suggested human listens, in priority order: e-take3 (proposed official,
 full listen), b-take1's first seconds (opening lines unheard by the
