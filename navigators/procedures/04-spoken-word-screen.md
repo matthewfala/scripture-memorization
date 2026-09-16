@@ -67,6 +67,37 @@ Report any A regions still flagged; the human confirms whether they are
 genuinely spoken or false positives. Record the thresholds in every
 report.
 
+## Stem-based screening (v2, preferred — learned 2026-09-15, binding)
+
+Full-mix melodicity is **blind to speech over pitched accompaniment**: the
+pitch tracker latches onto instruments (banjo, fiddle, organ) and scores
+spoken passages as sustained notes. Proven by the Packet D take1 incident:
+the human heard five spoken portions (3:54, 4:02, 4:10, 4:17, 4:40) that
+the full-mix screen scored 0.0% spoken — some at melodicity 1.00.
+
+Therefore, screen the **isolated vocal stem**, not the mix:
+
+1. Get the Lead Vocal stem from Suno: song menu → Get Stems (or the
+   Download dialog's "Stems & MIDI") → Auto split → Extract → download
+   Lead Vocal as MP3. Unlocking a song's stems costs one monthly Pro
+   download; all of that song's stems then become downloadable.
+2. Save it as `navigators/songs/stems/<mp3-basename>-vocals.mp3` (other
+   stems, e.g. `-backing-vocals`, follow the same pattern) and commit —
+   stems are screening evidence and calibration artifacts.
+3. Screen the stem with `--threshold 0.65 --min-run 2` (stem-mode
+   calibration, 2026-09-15): threshold 0.65 catches all five
+   human-labeled spoken spots on D take1; `--min-run 2` (a range must
+   span at least 2 consecutive windows) suppresses single-window blips.
+   The full-mix defaults (0.40, min-run 1) remain only as a cheap
+   pre-filter; a full-mix PASS is NOT evidence of absence of speech.
+4. Calibration reference: `stems/packet-a-memorized-vocals.mp3` screens
+   at 3.7% spoken with four short ranges (0:38, 2:09, 4:23, 4:37) —
+   residuals pending human confirmation, comfortably under the decision
+   rule. The 10%/15s decision rule applies unchanged to stem screens.
+
+On this calibration, D take1's stem screens at 13.8% spoken → REGENERATE
+by the default rule; the human may override per song (Procedure 06).
+
 ## Verification lessons (learned 2026-09-02, binding)
 
 - Small-model flags on short lines — packet bookends, letter+number
@@ -140,3 +171,8 @@ will memorize:
 
 - Are the procedures repeatable by another context?
 - Yes please add these to a new folder in the root repo. Please also add process to copy the official song to another folder denoting the official songs. Please make the entire pipeline process completely repeatable including the file naming conventions and what files to update after when etc.
+
+#### Document Modification On 2026-09-15 (stem-based screening)
+
+- Packet D, I like the sound, however there are portions that are spoken around 3:54 and 4:02 and 04:10 and 04:17 04:40. Is the automated detector able to be calibrated to detect this?
+- I'm pretty sure suno has this feature, you can download the spoken section without the music on the website?

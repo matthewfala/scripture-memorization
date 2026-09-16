@@ -31,6 +31,9 @@ Procedure 00).
   across rounds (round 1 → 1,2; round 2 → 3,4; …). Packet A's
   human-designated recording is `packet-a-memorized.mp3`.
 - Screening reports: `navigators/songs/screen-<mp3-basename>.md`.
+- Vocal stems (screening evidence, Procedure 04 stem mode):
+  `navigators/songs/stems/<mp3-basename>-vocals.mp3` (and
+  `-backing-vocals.mp3` etc.), extracted via Suno Get Stems.
 - Officials: `navigators/official/packet-<letter>.mp3` — canonical,
   take-number-free, overwritten on re-selection (Procedure 06).
 - Landing page: `navigators/official/index.html`; S3 keys mirror `official/`
@@ -74,3 +77,8 @@ reports include one naming the generating script.
 #### Document Modification On 2026-09-02 (publishing)
 
 - Can you add the official songs to an s3 bucket to be downloaded and have an index file which has the song portfolio please make it look nice and appropriate - a landing page for getting these songs. I give you permission to make a global s3 bucket in my aws account and put the official songs in it
+
+#### Document Modification On 2026-09-15 (stem-based screening)
+
+- Packet D, I like the sound, however there are portions that are spoken around 3:54 and 4:02 and 04:10 and 04:17 04:40. Is the automated detector able to be calibrated to detect this?
+- I'm pretty sure suno has this feature, you can download the spoken section without the music on the website?

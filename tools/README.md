@@ -33,6 +33,24 @@ verifies structural findings — see Procedure 04), `--melodicity-threshold`
 (default 0.40, calibrated), `--lyric-noise-threshold` (default 0.70,
 calibrated against the Packet A baseline).
 
+## Spoken-word screening on vocal stems (preferred)
+
+Full-mix melodicity cannot detect speech over pitched accompaniment
+(Procedure 04, 2026-09-15 lesson). Screen the isolated vocal stem from
+Suno's Get Stems instead:
+
+```bash
+tools/venv/bin/python3 tools/screen_spoken_word.py \
+    navigators/songs/stems/packet-d-take1-vocals.mp3 \
+    --threshold 0.65 --min-run 2 --out-dir navigators/songs
+```
+
+`--min-run 2` requires at least 2 consecutive suspect windows per
+reported range, suppressing single-window blips. Stem-mode calibration
+(2026-09-15): 0.65/min-run-2 catches all five human-labeled spoken spots
+on `packet-d-take1` (13.8% spoken, REGENERATE) while the memorized
+Packet A stem passes at 3.7%.
+
 ## Files
 
 - `screen_song.py` — combined runner; writes the per-song report.
@@ -72,3 +90,8 @@ designated.
 #### Document Modification On 2026-09-02 (publishing)
 
 - Can you add the official songs to an s3 bucket to be downloaded and have an index file which has the song portfolio please make it look nice and appropriate - a landing page for getting these songs. I give you permission to make a global s3 bucket in my aws account and put the official songs in it
+
+#### Document Modification On 2026-09-15 (stem-based screening)
+
+- Packet D, I like the sound, however there are portions that are spoken around 3:54 and 4:02 and 04:10 and 04:17 04:40. Is the automated detector able to be calibrated to detect this?
+- I'm pretty sure suno has this feature, you can download the spoken section without the music on the website?

@@ -166,7 +166,7 @@ def classify_and_merge(windows, threshold, hop_length_s):
     for w in windows:
         is_suspect = w["melodicity"] is not None and w["melodicity"] < threshold
         if is_suspect:
-            if current is not None and abs(w["start"] - current["end_start"]) < 1e-6:
+            if current is not None and abs(w["start"] - current["end_start"] - hop_length_s) < 1e-6:
                 current["end"] = w["end"]
                 current["end_start"] = w["start"]
                 current["windows"].append(w)
@@ -359,6 +359,12 @@ def main():
     )
     parser.add_argument("--sr", type=int, default=22050, help="Analysis sample rate.")
     parser.add_argument("--debug", action="store_true", help="Print per-window scores to stderr.")
+    parser.add_argument(
+        "--min-run", type=int, default=1,
+        help="Minimum consecutive suspect windows for a range to be reported. "
+             "Use 2 with --threshold 0.65 when screening an isolated vocal stem "
+             "(stem mode, Procedure 04); default 1 preserves full-mix behavior.",
+    )
     args = parser.parse_args()
 
     mp3_path = Path(args.mp3_path).expanduser().resolve()
@@ -386,8 +392,11 @@ def main():
     )
 
     suspect_ranges = classify_and_merge(windows, args.threshold, args.hop_length)
+    if args.min_run > 1:
+        suspect_ranges = [r for r in suspect_ranges if len(r["windows"]) >= args.min_run]
 
     params = {
+        "min_run": args.min_run,
         "window_length": args.window_length,
         "hop_length_s": args.hop_length,
         "min_voiced_fraction": args.min_voiced_fraction,

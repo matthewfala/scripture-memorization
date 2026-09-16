@@ -14,7 +14,7 @@ B–E PROPOSED (pending sampling).
 | packet-b-take2.mp3 | B | 4:08 | Generated 2026-09-02, v5.5, gospel soul style; **PROPOSED OFFICIAL** (screening 2026-09-02, pending human listen) |
 | packet-c-take1.mp3 | C | 5:30 | Generated 2026-09-02, v5.5, eighties ballad style |
 | packet-c-take2.mp3 | C | 5:44 | Generated 2026-09-02, v5.5, eighties ballad style; **PROPOSED OFFICIAL** (screening 2026-09-02, pending human listen) |
-| packet-d-take1.mp3 | D | 5:03 | Generated 2026-09-02, v5.5, bluegrass style; **PROPOSED OFFICIAL** (screening 2026-09-02, cleanest take of the batch, pending human listen) |
+| packet-d-take1.mp3 | D | 5:03 | Generated 2026-09-02, v5.5, bluegrass style; **PROPOSED OFFICIAL** — human likes the sound but reported spoken portions (3:54, 4:02, 4:10, 4:17, 4:40), confirmed by stem screening at 13.8% spoken (REGENERATE by rule; human override pending) |
 | packet-d-take2.mp3 | D | 5:14 | Generated 2026-09-02, v5.5, bluegrass style; screening suggests possible ordering irregularity near the intro |
 | packet-e-take1.mp3 | E | 6:07 | Generated 2026-09-02, v5.5, choral hymn style; REJECTED — entire outro (final verse + reference + bookend) confirmed sung twice |
 | packet-e-take2.mp3 | E | 6:13 | Generated 2026-09-02, v5.5, choral hymn style; runner-up — one confirmed doubled word ("Purity"), otherwise clean |
@@ -50,6 +50,20 @@ full listen), b-take1's first seconds (opening lines unheard by the
 transcriber), d-take2's intro (possible ordering irregularity),
 e-take4's first ~10s (the UNCLEAR finding, only if curious).
 
+## Stem-based re-screening (2026-09-15)
+
+The human caught five spoken portions in d-take1 (3:54, 4:02, 4:10,
+4:17, 4:40) that the full-mix screen had scored 0.0% spoken — proving
+full-mix melodicity blind to speech over pitched accompaniment. Vocal
+stems (Suno Get Stems, `stems/` folder) fix this: on the isolated vocal,
+d-take1 screens at **13.8% spoken** (12 ranges — all five human spots,
+plus 1:52–2:04 and others), a REGENERATE verdict, while the memorized A
+stem passes at 3.7% (four short residual ranges: 0:38, 2:09, 4:23, 4:37,
+pending human confirmation). Stem screening is now the Procedure 04
+default (threshold 0.65, min-run 2); B, C, and E official takes have not
+yet been stem-screened. D's official status awaits the human's call:
+override (keep take1 for its sound) or regenerate D (round 2 of 2).
+
 ## official/ copies (Procedure 06)
 
 `navigators/official/packet-<letter>.mp3` holds the canonical copy of
@@ -73,3 +87,8 @@ override, update the status here and re-copy per Procedure 06.
 
 - Are the procedures repeatable by another context?
 - Yes please add these to a new folder in the root repo. Please also add process to copy the official song to another folder denoting the official songs. Please make the entire pipeline process completely repeatable including the file naming conventions and what files to update after when etc.
+
+#### Document Modification On 2026-09-15 (stem-based screening)
+
+- Packet D, I like the sound, however there are portions that are spoken around 3:54 and 4:02 and 04:10 and 04:17 04:40. Is the automated detector able to be calibrated to detect this?
+- I'm pretty sure suno has this feature, you can download the spoken section without the music on the website?
