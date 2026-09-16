@@ -91,9 +91,11 @@ Therefore, screen the **isolated vocal stem**, not the mix:
    The full-mix defaults (0.40, min-run 1) remain only as a cheap
    pre-filter; a full-mix PASS is NOT evidence of absence of speech.
 4. Calibration reference: `stems/packet-a-memorized-vocals.mp3` screens
-   at 3.7% spoken with four short ranges (0:38, 2:09, 4:23, 4:37) —
-   residuals pending human confirmation, comfortably under the decision
-   rule. The 10%/15s decision rule applies unchanged to stem screens.
+   at 3.7% spoken with four short ranges (0:38, 2:09, 4:23, 4:37).
+   **Human-confirmed 2026-09-15**: "I can hear spoken slightly, but I'd
+   still classify these as singing" — A's residuals are the acceptable
+   borderline; the calibration stands. The 10%/15s decision rule applies
+   unchanged to stem screens.
 
 On this calibration, D take1's stem screens at 13.8% spoken → REGENERATE
 by the default rule; the human may override per song (Procedure 06).
@@ -131,6 +133,15 @@ calibration threshold used, and honest caveats.
   log, and refer the style to the human for revision (Procedure 00 re-run).
 - Generation attempts per packet are capped at 2 rounds without explicit
   human approval to continue.
+
+## Candidate pool (human-requested, 2026-09-15)
+
+When the human requests a candidate pool for a packet, generation rounds
+continue (human approval already given by the request) until **three
+takes pass both checks** (stem-mode spoken screen + lyric fidelity), up
+to a sanity cap of 3 rounds per series without a further check-in. The
+human then chooses the official from the passing pool (Procedure 06).
+Passing takes are candidates; failing takes are recorded as usual.
 
 ## Official take selection
 
@@ -176,3 +187,7 @@ will memorize:
 
 - Packet D, I like the sound, however there are portions that are spoken around 3:54 and 4:02 and 04:10 and 04:17 04:40. Is the automated detector able to be calibrated to detect this?
 - I'm pretty sure suno has this feature, you can download the spoken section without the music on the website?
+
+#### Document Modification On 2026-09-15 (calibration ruling, candidate pool)
+
+- I have been listening to C so that one is now locked. Can we lock it? Can you regenerate D? Perhaps we can have 3 candidates (which pass) for each. Also I'd like to regenerate E & B. Please try out the new Suno v6 model. Also for the A packet, I can hear spoken slightly, but I'd still classify these as singing.

@@ -20,8 +20,10 @@ before Procedure 04 (screening).
 ## Steps
 
 1. Open `https://suno.com/create`. Ensure **Custom/Advanced** mode and the
-   current model (v5.5 at time of writing). Use the shared workspace named
-   `Packets` when a workspace selector is offered.
+   current model (v6 as of 2026-09-15, per the human's request; the
+   2026-09-02 takes used v5.5). Record the model version in each SONGS.md
+   row. Use the shared workspace named `Packets` when a workspace
+   selector is offered.
 2. Paste the file's `## Lyrics` section (only the lyric lines, no headers)
    into the Lyrics editor. The editor is a contenteditable div: click it,
    select-all + delete, then type/paste the text. Long text can freeze the
@@ -63,3 +65,7 @@ before Procedure 04 (screening).
 - I'm logged into suno on chrome now. Can you please generate the 5 packets songs? Please store the song mp3 in the folder once generated. Ideally screen for the spoken words rather than sung and regenerate or change the style if so.
 - Are the procedures repeatable by another context?
 - Yes please add these to a new folder in the root repo. Please also add process to copy the official song to another folder denoting the official songs. Please make the entire pipeline process completely repeatable including the file naming conventions and what files to update after when etc.
+
+#### Document Modification On 2026-09-15
+
+- I have been listening to C so that one is now locked. Can we lock it? Can you regenerate D? Perhaps we can have 3 candidates (which pass) for each. Also I'd like to regenerate E & B. Please try out the new Suno v6 model.

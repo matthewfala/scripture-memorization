@@ -13,7 +13,7 @@ B–E PROPOSED (pending sampling).
 | packet-b-take1.mp3 | B | 3:52 | Generated 2026-09-02, v5.5, gospel soul style |
 | packet-b-take2.mp3 | B | 4:08 | Generated 2026-09-02, v5.5, gospel soul style; **PROPOSED OFFICIAL** (screening 2026-09-02, pending human listen) |
 | packet-c-take1.mp3 | C | 5:30 | Generated 2026-09-02, v5.5, eighties ballad style |
-| packet-c-take2.mp3 | C | 5:44 | Generated 2026-09-02, v5.5, eighties ballad style; **PROPOSED OFFICIAL** (screening 2026-09-02, pending human listen) |
+| packet-c-take2.mp3 | C | 5:44 | Generated 2026-09-02, v5.5, eighties ballad style; **OFFICIAL (LOCKED 2026-09-15)** — human listened and accepted |
 | packet-d-take1.mp3 | D | 5:03 | Generated 2026-09-02, v5.5, bluegrass style; **PROPOSED OFFICIAL** — human likes the sound but reported spoken portions (3:54, 4:02, 4:10, 4:17, 4:40), confirmed by stem screening at 13.8% spoken (REGENERATE by rule; human override pending) |
 | packet-d-take2.mp3 | D | 5:14 | Generated 2026-09-02, v5.5, bluegrass style; screening suggests possible ordering irregularity near the intro |
 | packet-e-take1.mp3 | E | 6:07 | Generated 2026-09-02, v5.5, choral hymn style; REJECTED — entire outro (final verse + reference + bookend) confirmed sung twice |
@@ -67,10 +67,21 @@ override (keep take1 for its sound) or regenerate D (round 2 of 2).
 ## official/ copies (Procedure 06)
 
 `navigators/official/packet-<letter>.mp3` holds the canonical copy of
-each packet's current official take. As of 2026-09-02: a ←
-packet-a-memorized (LOCKED, human-designated); b ← b-take2, c ← c-take2,
-d ← d-take1, e ← e-take3 (all PROPOSED pending human listen). On lock or
+each packet's current official take. As of 2026-09-15: a ←
+packet-a-memorized (LOCKED, human-designated); **c ← c-take2 (LOCKED
+2026-09-15, human listened and accepted)**; b ← b-take2, d ← d-take1,
+e ← e-take3 (PROPOSED — a v6 regeneration series is in progress for
+B, D, and E per the human's request; each will get a pool of 3
+stem-screen-passing candidates for the human to choose from). On lock or
 override, update the status here and re-copy per Procedure 06.
+
+## Calibration ruling (2026-09-15)
+
+The human reviewed the memorized A stem's four residual flagged ranges
+(0:38, 2:09, 4:23, 4:37): "I can hear spoken slightly, but I'd still
+classify these as singing." The stem-mode calibration (threshold 0.65,
+min-run 2) stands confirmed — A's flags are the acceptable borderline,
+and takes flagging materially above A's 3.7% remain suspect.
 
 ## Human Prompts
 
@@ -92,3 +103,7 @@ override, update the status here and re-copy per Procedure 06.
 
 - Packet D, I like the sound, however there are portions that are spoken around 3:54 and 4:02 and 04:10 and 04:17 04:40. Is the automated detector able to be calibrated to detect this?
 - I'm pretty sure suno has this feature, you can download the spoken section without the music on the website?
+
+#### Document Modification On 2026-09-15 (C locked, v6 regeneration series)
+
+- I have been listening to C so that one is now locked. Can we lock it? Can you regenerate D? Perhaps we can have 3 candidates (which pass) for each. Also I'd like to regenerate E & B. Please try out the new Suno v6 model. Also for the A packet, I can hear spoken slightly, but I'd still classify these as singing.

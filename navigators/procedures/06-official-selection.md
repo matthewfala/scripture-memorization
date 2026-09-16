@@ -15,6 +15,9 @@ to know take numbers.
   lyric fidelity; tie-break on lower spoken fraction. If no take passes
   mechanically (common — the checks over-flag short lines), pick the take
   with the fewest *confirmed real* defects and record the evidence.
+- When the human has requested a candidate pool (Procedure 04), present
+  the three passing candidates and let the human choose the official
+  directly; the agent's ranking is advisory.
 - Status is **PROPOSED** until the human listens and approves, then
   **LOCKED**. A LOCKED official never changes; a human override replaces a
   PROPOSED selection at any time.
@@ -49,3 +52,7 @@ to know take numbers.
 
 - Here's the song for packet A I memorized. https://suno.com/s/WuvaIW3gO07diy4P Also can we have the checker check the lyrics match exactly as expected too or else regenerate. Ideally we should select the official song for each lyric/style combo
 - Yes please add these to a new folder in the root repo. Please also add process to copy the official song to another folder denoting the official songs. Please make the entire pipeline process completely repeatable including the file naming conventions and what files to update after when etc.
+
+#### Document Modification On 2026-09-15
+
+- I have been listening to C so that one is now locked. Can we lock it? Can you regenerate D? Perhaps we can have 3 candidates (which pass) for each. Also I'd like to regenerate E & B. Please try out the new Suno v6 model.

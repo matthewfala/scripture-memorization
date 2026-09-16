@@ -4,7 +4,7 @@
 |---|---|---|
 | A | LOCKED | Jesus Movement folk - fingerpicked acoustic guitar, close vocal harmony, warm 1972 analog tape, gentle 88 BPM, earnest and unhurried. |
 | B | PROPOSED | Contemporary gospel soul - Hammond B3 organ, piano and handclaps, call-and-response between a soaring lead and answering backing singers, polished modern production, driving 112 BPM, jubilant and triumphant. |
-| C | PROPOSED | Eighties soft rock ballad - warm piano, clean electric guitar and lush synth pads, expressive solo lead vocal carrying a strong singable melody, polished 1985 studio sheen, tender 68 BPM, comforting and heartfelt. |
+| C | LOCKED | Eighties soft rock ballad - warm piano, clean electric guitar and lush synth pads, expressive solo lead vocal carrying a strong singable melody, polished 1985 studio sheen, tender 68 BPM, comforting and heartfelt. |
 | D | PROPOSED | Bluegrass revival - driving banjo, flatpicked guitar, fiddle and upright bass, male-female duet vocals trading verses, crisp 1990s Nashville acoustic production, brisk 126 BPM, bright and joyful. |
 | E | PROPOSED | Sacred choral hymn - grand pipe organ beneath a full mixed choir carrying a clear hymn melody, reverberant 1960s cathedral recording, stately 96 BPM, reverent and uplifting. |
 | S1 | PROPOSED | Celtic anthem - driving fiddle, uilleann pipes, bodhran and rolling acoustic guitar, full mixed choir soaring through a strong singable melody, widescreen contemporary production, spirited 128 BPM, majestic and exultant. |
@@ -67,3 +67,12 @@
   changes since 2026-08-27; the exclusion list still removes no genre
   family, and required qualities were again expressed positively
   (singable melody, melodic verses) with no negative guard clauses.
+- 2026-09-15: C -> LOCKED. The human listened to the C official (take 2)
+  and accepted it; per the partition rules a locked grouping's style is
+  never altered.
+
+## Human Prompts
+
+#### Document Modification On 2026-09-15
+
+- I have been listening to C so that one is now locked. Can we lock it? Can you regenerate D? Perhaps we can have 3 candidates (which pass) for each. Also I'd like to regenerate E & B. Please try out the new Suno v6 model. Also for the A packet, I can hear spoken slightly, but I'd still classify these as singing.

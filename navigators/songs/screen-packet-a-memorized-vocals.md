@@ -44,3 +44,14 @@
 #### Initial Document Written On 2026-09-02
 
 - Generated automatically by `screen_spoken_word.py` per `navigators/procedures/04-spoken-word-screen.md`, during calibration on Packet A.
+
+## Human Confirmation (2026-09-15)
+
+The human reviewed the four residual flagged ranges (0:38, 2:09, 4:23,
+4:37): "I can hear spoken slightly, but I'd still classify these as
+singing." Calibration confirmed — these ranges are the acceptable
+borderline for the 0.65/min-run-2 stem screen.
+
+#### Document Modification On 2026-09-15
+
+- Also for the A packet, I can hear spoken slightly, but I'd still classify these as singing.
