@@ -232,6 +232,11 @@ def main():
                          default=str(Path(__file__).resolve().parents[1]
                                      / "navigators" / "procedures" / "03-lyrics-format.md"))
     parser.add_argument("--melodicity-threshold", type=float, default=DEFAULT_MELODICITY_THRESHOLD)
+    parser.add_argument(
+        "--min-run", type=int, default=1,
+        help="Minimum consecutive suspect windows per reported range "
+             "(stem mode uses 2 with --melodicity-threshold 0.65; Procedure 04).",
+    )
     parser.add_argument("--lyric-noise-threshold", type=float, default=DEFAULT_LYRIC_NOISE_THRESHOLD)
     parser.add_argument("--whisper-model", type=str, default="small")
     parser.add_argument("--cpu-threads", type=int, default=8)
@@ -272,7 +277,9 @@ def main():
     )
     print(f"[{song_name}] melodicity done in {time.time()-t0:.1f}s", file=sys.stderr)
     suspect_ranges = classify_and_merge(mel_windows, args.melodicity_threshold, 1.0)
-    mel_params = {"window_length": 2.0, "hop_length_s": 1.0}
+    if args.min_run > 1:
+        suspect_ranges = [r for r in suspect_ranges if len(r["windows"]) >= args.min_run]
+    mel_params = {"window_length": 2.0, "hop_length_s": 1.0, "min_run": args.min_run}
 
     print(f"[{song_name}] transcribing (faster-whisper {args.whisper_model})...", file=sys.stderr)
     t0 = time.time()
