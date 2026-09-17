@@ -42,3 +42,19 @@ then re-run Procedure 00 (LOCKED and ACCEPTED packets are never altered).
 - fully sung melodic vocals throughout, no spoken word - In my experience this doesn't actually change the outcome of the amount of spoken word so much as the genera of music does. It's hard for me to predict which genres are going to be spoken more. I can share feedback after listening to the music. *(Excerpt; full prompt recorded in `03-lyrics-format.md`.)*
 - I'm okay with this. Let's go ahead
 - Please continue.
+
+## Feedback log addition (2026-09-17, Procedure 04)
+
+- Packet B (contemporary gospel soul, call-and-response): across six v6
+  takes (two rounds of ours plus the human's Sept-10 batch), the style
+  consistently drops or garbles the short spoken-form lines — letter
+  designators ("Bee Three and Bee Four") and reference lines — while
+  verse text survives. The call-and-response texture appears to absorb
+  short lines into backing echoes. If exact designator/reference
+  rendition matters more than the gospel texture, Procedure 00 should
+  revisit B's style; otherwise accept the trait and choose officials by
+  ear.
+
+#### Document Modification On 2026-09-17
+
+- I have been listening to C so that one is now locked. Can we lock it? Can you regenerate D? Perhaps we can have 3 candidates (which pass) for each. Also I'd like to regenerate E & B. Please try out the new Suno v6 model.

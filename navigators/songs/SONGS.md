@@ -20,12 +20,18 @@ B–E PROPOSED (pending sampling).
 | packet-e-take2.mp3 | E | 6:13 | Generated 2026-09-02, v5.5, choral hymn style; runner-up — one confirmed doubled word ("Purity"), otherwise clean |
 | packet-e-take3.mp3 | E | 4:59 | Round 2, 2026-09-02, same lyrics/style; **PROPOSED OFFICIAL** — zero confirmed defects (all flags resolved to transcriber noise) |
 | packet-e-take4.mp3 | E | 5:12 | Round 2, 2026-09-02; close second — one UNCLEAR opening-line finding, needs a ~10s human listen |
-| packet-b-take3.m4a | B | 4:28 | v6 series round 1, 2026-09-15; Suno clip bb18a496; v6 rewrote the style text server-side (input was byte-verified) |
-| packet-b-take4 | B | 4:20 | v6 series round 1, 2026-09-15; Suno clip b4394a32; unlocked, file retrieval pending |
-| packet-d-take3.m4a | D | 4:32 | v6 series round 1, 2026-09-15; Suno clip fb9c4bea |
-| packet-d-take4.m4a | D | 4:40 | v6 series round 1, 2026-09-15; Suno clip cfd39f29 |
-| packet-e-take5.mp3 | E | 5:17 | v6 series round 1, 2026-09-15; Suno clip 17090669 (mp3 64 kbps — Suno's v6 mp3 export; m4a is higher quality) |
-| packet-e-take6.m4a | E | 5:28 | v6 series round 1, 2026-09-15; Suno clip d3900654 |
+| packet-b-take3.m4a | B | 4:28 | v6 round 1, 2026-09-15; clip bb18a496; **POOL CANDIDATE** — stem screen PASS (5.2% spoken, bookend-only flags) |
+| packet-b-take4 | B | 4:20 | v6 round 1, 2026-09-15; clip b4394a32; FAIL (3 missing lines); file retrieval pending |
+| packet-b-take5..take6 | B | 4:19/4:26 | Sept 10 human-generated v6 takes (clips 397c6b00/e97cbb00), adopted as candidates; both FAIL (structural looseness, WER >30%); stems only |
+| packet-b-take7 | B | 4:31 | v6 round 2, 2026-09-17; clip 3d64c597; FAIL (5 missing designator/reference lines, no verse loss); **third pool slot** by least-bad; file retrieval pending |
+| packet-b-take8 | B | 4:31 | v6 round 2, 2026-09-17; clip 77aa6fee; FAIL (6 missing incl. a block); stems only |
+| packet-d-take3.m4a | D | 4:32 | v6 round 1, 2026-09-15; clip fb9c4bea; **POOL CANDIDATE** — stem screen PASS (7.4% spoken, bookend-only) |
+| packet-d-take4.m4a | D | 4:40 | v6 round 1, 2026-09-15; clip cfd39f29; FAIL (12.1% spoken) |
+| packet-d-take5.m4a | D | 4:32 | v6 round 2, 2026-09-16; clip 04eca652; **POOL CANDIDATE** — PASS (1.1% spoken, 9.3% WER; opening bookends unheard — spot-listen the intro) |
+| packet-d-take6.m4a | D | 4:02 | v6 round 2, 2026-09-16; clip 93c07b14; **POOL CANDIDATE** — PASS (3.7% spoken, 4.9% WER — cleanest take of the project) |
+| packet-e-take5.mp3 | E | 5:17 | v6 round 1, 2026-09-15; clip 17090669; **POOL CANDIDATE** — stem screen PASS (0.9% spoken) |
+| packet-e-take6.m4a | E | 5:28 | v6 round 1, 2026-09-15; clip d3900654; FAIL (7 missing lines incl. opening) |
+| packet-e-take7 | E | 5:14 | Sept 9 human-generated v6 take (clip 80cf869b), adopted as candidate; FAIL (WER 33.6%, missing lines); stems only |
 
 Screening reports (`screen-*.md`) are produced per Procedure 04.
 
@@ -51,14 +57,34 @@ Note: the Suno library also contains an accidental extra E generation
 pair (1:40 and 2:00 clips, from a double submission during round 2, not
 downloaded) — safe for the human to trash.
 
-Note (2026-09-15): the v6 round produced six additional stray clips
-beyond the intended pairs (four B: 4:19/4:26/4:34/4:23, two E:
-5:14/5:05 — all full-length, correct title and exact style text,
-apparent phantom submissions). Not downloaded; usable as spare
-candidates if the pools fall short, otherwise safe to trash. Suno's
-new per-song download system (Pro quota, 27/month) delivers m4a
-(~134 kbps AAC) or mp3 (64 kbps); v6 takes are stored as .m4a where
-that's what retrieval yielded.
+Note (2026-09-15, corrected 2026-09-17): the six "stray" v6 clips
+(four B: 4:19/4:26/4:34/4:23, two E: 5:14/5:05) were NOT phantom
+submissions — they are v6 takes the human generated themselves on
+Sept 9-10 with the exact committed styles. Three were adopted and
+screened as candidates (b-take5, b-take6, e-take7); all three failed
+on structural looseness. The remaining two (B 4:34/4:23, E 5:05)
+were left unscreened after that pattern. Suno's per-song download
+system (Pro quota, 27/month, refreshes 10/6) delivers m4a (~134 kbps
+AAC) or mp3 (64 kbps); ~8 downloads remain this month.
+
+## Candidate pools (v6 series result, 2026-09-17)
+
+- **D — pool complete, all stem-verified passers**: take3 (7.4%
+  spoken), take5 (1.1% spoken, 9.3% WER), take6 (3.7% spoken, 4.9%
+  WER — the cleanest take of the whole project).
+- **E — pool complete**: take3 (v5.5 — zero confirmed defects per the
+  Sept 2 medium verification; stem spoken 1.0%), take5 (v6 — 0.9%
+  spoken, no missing content), take2 (v5.5 runner-up — one confirmed
+  doubled word "Purity"; stem not screened).
+- **B — pool closed short of 3 clean passers**: take3 (v6 — clean
+  pass, bookend-only flags), take2 (v5.5 — borderline: one missing
+  designator, phonetic near-misses on others), take7 (v6 round 2 —
+  best of the fails: 5 missing designator/reference lines but no
+  verse text lost). All four v6 B takes plus both Sept-10 takes
+  dropped short designator/reference lines — a consistent
+  genre-level failure mode of the gospel call-and-response style,
+  recorded in style-preferences.md per Procedure 04; revising B's
+  style (Procedure 00) is the alternative to accepting this trait.
 
 Suggested human listens, in priority order: e-take3 (proposed official,
 full listen), b-take1's first seconds (opening lines unheard by the
