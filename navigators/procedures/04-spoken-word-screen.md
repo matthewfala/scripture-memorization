@@ -100,6 +100,46 @@ Therefore, screen the **isolated vocal stem**, not the mix:
 On this calibration, D take1's stem screens at 13.8% spoken → REGENERATE
 by the default rule; the human may override per song (Procedure 06).
 
+## Strict clean-sample standard (2026-09-28, binding)
+
+The human requires every candidate to sing **every** line — bookends,
+topic titles and designators included — matching the lyrics. A take is
+a **clean sample** only if all of the following hold on its vocal stem:
+
+1. Stem spoken screen passes (threshold 0.65, `--min-run 2`, decision
+   rule unchanged).
+2. `tools/verify_lines.py` (biased-prompt medium transcription + global
+   alignment + fuzzy window) finds every expected line, **or** each
+   unconfirmed line shows vocal energy >= 0.8x the stem's median in its
+   expected region (sung but unintelligible to the ASR — the memorized
+   Packet A reference itself scores 62/64 with its two misses in this
+   category).
+3. No line is NOT_FOUND with energy < 0.8x at a bookend position (start
+   or end of the song) — a low-energy bookend miss means the bookend was
+   most likely skipped, which disqualifies the take.
+4. No confirmed repeats or extra sung lines beyond the lyrics.
+5. **Topic order (v3 lyrics)**: `tools/check_topic_order.py` confirms every
+   topic's name is heard in BOTH positions — before its verse pair and
+   right after the pair's trailing reference — walking the transcript in
+   order. Required because `verify_lines.py`'s fuzzy search is
+   position-blind (it can "find" a skipped title inside verse text).
+6. **Bookends**: `tools/probe_bookends.py` transcribes only the opening
+   and closing windows with the bookend words as bias. Validated
+   2026-09-28: it hears Packet A's bookends perfectly and correctly
+   reports D takes 5/6 skipping "Packet Dee" (their transcripts start at
+   "Put Christ First" despite the bias), so it does not merely echo its
+   prompt. A closing bookend transcribed as a same-syllable near-miss in
+   its slot ("how did he grow in…") counts as sung-but-blurred.
+
+Run order per take: stem spoken screen → `verify_lines.py` (writes the
+word timeline) → `check_topic_order.py` → `probe_bookends.py`. Any hard
+failure disqualifies; near-misses are published only as labelled
+near-clean candidates.
+
+Biased prompting matters: it feeds the packet's short lines to the
+transcriber, and resolved every "missing designator" finding on the B
+pool (2026-09-17) as a transcriber artifact.
+
 ## Verification lessons (learned 2026-09-02, binding)
 
 - Small-model flags on short lines — packet bookends, letter+number
@@ -191,3 +231,12 @@ will memorize:
 #### Document Modification On 2026-09-15 (calibration ruling, candidate pool)
 
 - I have been listening to C so that one is now locked. Can we lock it? Can you regenerate D? Perhaps we can have 3 candidates (which pass) for each. Also I'd like to regenerate E & B. Please try out the new Suno v6 model. Also for the A packet, I can hear spoken slightly, but I'd still classify these as singing.
+
+#### Document Modification On 2026-09-28 (strict clean-sample standard)
+
+- Can you make sure all the candidates pass the screeners? We need the bookends too. The text should match the lyrics.
+- Can we switch back to packet a's format? I'd like to focus on packet E. Can you please make sure we have 3 clean samples if possible? Can you also update the website to display all three samples for packet e? I'll listen to those and tell you which I'd like to lock.
+
+#### Document Modification On 2026-09-28 (topic-order and bookend probes)
+
+- Can we switch back to packet a's format? I'd like to focus on packet E. Can you please make sure we have 3 clean samples if possible? Can you also update the website to display all three samples for packet e? I'll listen to those and tell you which I'd like to lock.

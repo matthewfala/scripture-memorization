@@ -157,11 +157,18 @@ def main():
     name = Path(args.stem_path).stem
     out_dir = Path(args.out_dir) if args.out_dir else Path(args.stem_path).parent
     out = out_dir / f"verify-{name}.md"
+    import json
+    with open(out_dir / f"verify-{name}.words.json", "w") as jf:
+        json.dump([[round(t, 2), w] for t, w in zip(times, words)], jf)
     with open(out, "w") as f:
         f.write(f"# Line-presence verification — {name}\n\n")
         f.write(f"- Model: faster-whisper {args.whisper_model} (biased prompt, word timestamps)\n")
         f.write(f"- Found threshold {args.found_threshold}, weak {args.weak_threshold}\n")
-        f.write(f"- Result: {n_found}/{len(expected)} lines FOUND\n\n")
+        f.write(f"- Result: {n_found}/{len(expected)} lines FOUND\n")
+        head = " ".join(w for t, w in zip(times, words) if t < 25)
+        tail = " ".join(w for t, w in zip(times, words) if t > total - 30)
+        f.write(f"- Heard in first 25 s: {head}\n")
+        f.write(f"- Heard in last 30 s: {tail}\n\n")
         f.write("| # | Verdict | Match | At | Line | Note |\n|---|---|---|---|---|---|\n")
         for row in rows:
             f.write("| " + " | ".join(str(x) for x in row) + " |\n")

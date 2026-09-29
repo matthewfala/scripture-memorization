@@ -1,0 +1,80 @@
+# Line-presence verification — packet-e-take15-vocals
+
+- Model: faster-whisper medium (biased prompt, word timestamps)
+- Found threshold 0.8, weak 0.6
+- Result: 56/64 lines FOUND
+- Heard in first 25 s: packet ee grow in christlikeness love ee one and ee two john thirteen thirty four to thirty five a new commandment i give unto you that ye love one another as i have loved you that ye also love
+- Heard in last 30 s: and glorify your father which is in heaven matthew 5 16 good works e 11 and e 12 pack it in grow in christ like mess and glorify your father which is in heaven matthew 5 16
+
+| # | Verdict | Match | At | Line | Note |
+|---|---|---|---|---|---|
+| 1 | FOUND | 1.00 | 0:00 | Packet Ee |  |
+| 2 | FOUND | 1.00 | 0:02 | Grow in Christlikeness |  |
+| 3 | FOUND | 1.00 | 0:05 | Love |  |
+| 4 | FOUND | 1.00 | 0:06 | Ee One and Ee Two |  |
+| 5 | FOUND | 1.00 | 0:08 | John thirteen thirty-four to thirty-five. |  |
+| 6 | FOUND | 1.00 | 0:12 | A new commandment I give unto you, That ye love one another; |  |
+| 7 | FOUND | 1.00 | 0:08 | John thirteen thirty-four to thirty-five. |  |
+| 8 | FOUND | 0.68 | 0:57 | First John three eighteen. |  |
+| 9 | FOUND | 1.00 | 0:48 | My little children, let us not love in word, neither in tong |  |
+| 10 | FOUND | 0.68 | 0:57 | First John three eighteen. |  |
+| 11 | FOUND | 1.00 | 0:05 | Love |  |
+| 12 | FOUND | 1.00 | 0:06 | Ee One and Ee Two |  |
+| 13 | FOUND | 1.00 | 1:58 | Humility |  |
+| 14 | WEAK | 0.77 | 1:08 | Ee Three and Ee Four | vocal-energy 0.18x median in 64-75s |
+| 15 | FOUND | 0.61 | 1:11 | Philippians two three to four. |  |
+| 16 | FOUND | 0.96 | 1:16 | Let nothing be done through strife or vainglory; but in lowl |  |
+| 17 | FOUND | 0.61 | 1:11 | Philippians two three to four. |  |
+| 18 | FOUND | 0.88 | 1:42 | First Peter five five to six. |  |
+| 19 | FOUND | 0.61 | 1:46 | Likewise, ye younger, submit yourselves unto the elder. Yea, |  |
+| 20 | FOUND | 0.88 | 1:42 | First Peter five five to six. |  |
+| 21 | FOUND | 1.00 | 1:58 | Humility |  |
+| 22 | FOUND | 0.77 | 1:08 | Ee Three and Ee Four |  |
+| 23 | FOUND | 1.00 | 2:24 | Purity |  |
+| 24 | FOUND | 0.71 | 0:06 | Ee Five and Ee Six |  |
+| 25 | FOUND | 0.67 | 2:28 | Ephesians five three. |  |
+| 26 | FOUND | 0.98 | 2:30 | But fornication, and all uncleanness, or covetousness, let i |  |
+| 27 | FOUND | 0.67 | 2:28 | Ephesians five three. |  |
+| 28 | FOUND | 0.70 | 2:15 | First Peter two eleven. |  |
+| 29 | FOUND | 0.98 | 2:48 | Dearly beloved, I beseech you as strangers and pilgrims, abs |  |
+| 30 | WEAK | 0.70 | 2:15 | First Peter two eleven. | vocal-energy 0.37x median in 130-143s |
+| 31 | FOUND | 1.00 | 2:24 | Purity |  |
+| 32 | WEAK | 0.71 | 0:06 | Ee Five and Ee Six | vocal-energy 1.23x median in 1-12s |
+| 33 | FOUND | 0.62 | 0:35 | Honesty |  |
+| 34 | FOUND | 0.68 | 0:06 | Ee Seven and Ee Eight |  |
+| 35 | FOUND | 0.60 | 0:50 | Leviticus nineteen eleven. |  |
+| 36 | FOUND | 1.00 | 3:12 | Ye shall not steal, neither deal falsely, neither lie one to |  |
+| 37 | FOUND | 0.60 | 0:50 | Leviticus nineteen eleven. |  |
+| 38 | FOUND | 0.60 | 4:07 | Acts twenty-four sixteen. |  |
+| 39 | FOUND | 0.78 | 3:25 | And herein do I exercise myself, to have always a conscience |  |
+| 40 | WEAK | 0.60 | 4:07 | Acts twenty-four sixteen. | vocal-energy 0.58x median in 243-254s |
+| 41 | WEAK | 0.62 | 0:35 | Honesty | vocal-energy 1.82x median in 31-41s |
+| 42 | FOUND | 0.68 | 0:06 | Ee Seven and Ee Eight |  |
+| 43 | FOUND | 1.00 | 3:42 | Faith |  |
+| 44 | FOUND | 0.80 | 0:06 | Ee Nine and Ee Ten |  |
+| 45 | FOUND | 0.70 | 4:03 | Hebrews eleven six. |  |
+| 46 | FOUND | 1.00 | 3:46 | But without faith it is impossible to please him: for he tha |  |
+| 47 | FOUND | 0.70 | 4:03 | Hebrews eleven six. |  |
+| 48 | FOUND | 1.00 | 4:06 | Romans four twenty to twenty-one. |  |
+| 49 | FOUND | 1.00 | 4:08 | He staggered not at the promise of God through unbelief; but |  |
+| 50 | FOUND | 1.00 | 4:06 | Romans four twenty to twenty-one. |  |
+| 51 | FOUND | 1.00 | 3:42 | Faith |  |
+| 52 | FOUND | 0.80 | 0:06 | Ee Nine and Ee Ten |  |
+| 53 | FOUND | 1.00 | 4:33 | Good Works |  |
+| 54 | FOUND | 0.70 | 0:06 | Ee Eleven and Ee Twelve |  |
+| 55 | FOUND | 0.53 | 2:04 | Galatians six nine to ten. |  |
+| 56 | FOUND | 0.89 | 4:41 | And let us not be weary in well doing: for in due season we  |  |
+| 57 | FOUND | 0.53 | 2:04 | Galatians six nine to ten. |  |
+| 58 | WEAK | 0.63 | 1:43 | Matthew five sixteen. | vocal-energy 0.34x median in 98-110s |
+| 59 | FOUND | 0.59 | 4:57 | Let your light so shine before men, that they may see your g |  |
+| 60 | WEAK | 0.63 | 1:43 | Matthew five sixteen. | vocal-energy 0.34x median in 98-110s |
+| 61 | FOUND | 1.00 | 4:33 | Good Works |  |
+| 62 | WEAK | 0.70 | 0:06 | Ee Eleven and Ee Twelve | vocal-energy 1.22x median in 1-13s |
+| 63 | FOUND | 1.00 | 0:00 | Packet Ee |  |
+| 64 | FOUND | 1.00 | 0:02 | Grow in Christlikeness |  |
+
+## Human Prompts
+
+#### Initial Document Written On 2026-09-17
+
+- Generated by `tools/verify_lines.py` per Procedure 04 (strict standard).

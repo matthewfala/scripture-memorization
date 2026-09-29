@@ -36,6 +36,18 @@ to know take numbers.
   OFFICIAL (and its status PROPOSED/LOCKED), runner-up notes, and the
   copy's provenance (source take file).
 
+## Candidates on the public site
+
+While a packet is being chosen, its site card shows the candidate pool
+instead of a single player: badge **Choosing**, one numbered row per
+candidate (take number, duration, model, screening verdict in plain
+words, player, download). Candidate files live in
+`navigators/official/candidates/packet-<letter>-take<N>.m4a` (AAC, see
+Procedure 05) and publish to `candidates/` on S3. On lock, copy the
+chosen take to `official/packet-<letter>.mp3` (or .m4a), restore the
+single-player card with a **Locked** badge, and delete that packet's
+files from `candidates/`.
+
 ## What updates when
 
 | Event | Update |
@@ -56,3 +68,7 @@ to know take numbers.
 #### Document Modification On 2026-09-15
 
 - I have been listening to C so that one is now locked. Can we lock it? Can you regenerate D? Perhaps we can have 3 candidates (which pass) for each. Also I'd like to regenerate E & B. Please try out the new Suno v6 model.
+
+#### Document Modification On 2026-09-28
+
+- Can we switch back to packet a's format? I'd like to focus on packet E. Can you please make sure we have 3 clean samples if possible? Can you also update the website to display all three samples for packet e? I'll listen to those and tell you which I'd like to lock.

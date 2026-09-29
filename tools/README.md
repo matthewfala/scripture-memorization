@@ -65,10 +65,21 @@ Packet A stem passes at 3.7%.
   Run these after any dependency upgrade to confirm the pipeline still
   separates sung from spoken and catches missing/repeated lines.
 
+## Strict clean-sample tools (Procedure 04)
+
+- `verify_lines.py STEM --lyrics-file L` — biased-prompt medium
+  transcription; per-line FOUND / WEAK / NOT_FOUND with vocal-energy cue;
+  writes `verify-<stem>.md` and a `.words.json` timeline.
+- `check_topic_order.py WORDS_JSON --lyrics-file L` — v3 lyrics: confirms
+  each topic is announced before and after its verses, in order.
+- `probe_bookends.py STEM --lyrics-file L` — transcribes the opening and
+  closing windows to confirm both "Packet X / Name" bookends are sung.
+
 ## Publishing
 
 - `publish-official.sh` — uploads `navigators/official/` (mp3s + `index.html`)
-  and a zip of all officials to the public S3 website bucket. Needs the
+  and a zip of all officials to the public S3 website bucket, plus
+  `candidates/*.m4a` for packets still being chosen. Needs the
   `aws` CLI on the default profile. See Procedure 07.
 
 ## Calibration provenance
@@ -95,3 +106,7 @@ designated.
 
 - Packet D, I like the sound, however there are portions that are spoken around 3:54 and 4:02 and 04:10 and 04:17 04:40. Is the automated detector able to be calibrated to detect this?
 - I'm pretty sure suno has this feature, you can download the spoken section without the music on the website?
+
+#### Document Modification On 2026-09-28
+
+- Can we switch back to packet a's format? I'd like to focus on packet E. Can you please make sure we have 3 clean samples if possible? Can you also update the website to display all three samples for packet e? I'll listen to those and tell you which I'd like to lock.

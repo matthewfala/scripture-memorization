@@ -161,6 +161,21 @@
   .dl:hover { background: var(--gold-soft); border-color: var(--gold); }
   .dl svg { width: 1em; height: 1em; }
 
+  /* ---------- Candidates (packets still being chosen) ---------- */
+  .badge.choosing { border-color: #5b4a7a; color: #5b4a7a; background: #ece6f5; }
+  .candidates { border-top: 1px solid var(--line); padding-top: 1rem; }
+  .candidates > p { margin: 0 0 .9rem; font-size: .88rem; color: var(--ink-soft); }
+  .cand { display: grid; grid-template-columns: 2.2rem 1fr; gap: .15rem .85rem; padding: .85rem 0; border-top: 1px dashed var(--line); }
+  .cand:first-of-type { border-top: 0; padding-top: .2rem; }
+  .cand .n { grid-row: span 3; font-family: var(--serif); font-size: 1.9rem; font-weight: 600; color: var(--accent); line-height: 1; padding-top: .15rem; }
+  .cand h4 { margin: 0; font-size: .98rem; font-weight: 600; }
+  .cand h4 small { font-weight: 500; color: var(--ink-faint); margin-left: .4rem; }
+  .cand .check { margin: .1rem 0 .55rem; font-size: .84rem; color: var(--ink-soft); }
+  .cand .check b { color: #2f6b3a; font-weight: 600; }
+  .cand .check b.warn { color: #9a5b12; }
+  .cand .player { border-top: 0; padding-top: 0; }
+  .cand.pending { opacity: .75; }
+  .cand.pending .check { font-style: italic; }
   /* ---------- Notes & footer ---------- */
   .notes { margin-top: 3.5rem; padding: 1.75rem 2rem; background: var(--paper-deep); border-radius: 18px; border: 1px solid var(--line); }
   .notes h2 { font-family: var(--serif); font-size: 1.5rem; margin: 0 0 .75rem; }
@@ -210,7 +225,7 @@
 <main id="packets">
   <div class="section-head">
     <h2>The Portfolio</h2>
-    <p>Official recording per packet · MP3 · updated 2 September 2026</p>
+    <p>Official recording per packet · updated 29 September 2026</p>
   </div>
 
   <!-- Packet A -->
@@ -305,8 +320,8 @@
   <article class="packet" style="--accent:#5b4a7a">
     <div class="letter"><b>E</b><small>Packet</small></div>
     <div class="body">
-      <header><h3>Grow in Christlikeness</h3><span class="badge">Proposed</span></header>
-      <p class="meta"><span>4:59</span><span>Sacred choral hymn</span><span>96 BPM</span></p>
+      <header><h3>Grow in Christlikeness</h3><span class="badge choosing">Choosing</span></header>
+      <p class="meta"><span>2 candidates</span><span>Sacred choral hymn</span><span>96 BPM</span></p>
       <p class="style"><strong>The sound:</strong> grand pipe organ beneath a full mixed choir carrying a clear hymn melody, in a reverberant 1960s cathedral recording — reverent and uplifting.</p>
       <ul class="topics">
         <li><b>Love</b><span>John 13:34-35 · 1 John 3:18</span></li>
@@ -316,9 +331,31 @@
         <li><b>Faith</b><span>Hebrews 11:6 · Romans 4:20-21</span></li>
         <li><b>Good Works</b><span>Galatians 6:9-10 · Matthew 5:16</span></li>
       </ul>
-      <div class="player">
-        <audio controls preload="none" src="packet-e.mp3"></audio>
-        <a class="dl" href="packet-e.mp3" download="Packet E - Grow in Christlikeness.mp3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download MP3 · 6.5 MB</a>
+      <div class="candidates">
+        <p><strong>Choose the official recording.</strong> Now in Packet A's structure — each topic's name and designators are sung before <em>and</em> after its verses. Every candidate below was screened line by line on its isolated vocal track.</p>
+        <div class="cand">
+          <div class="n">1</div>
+          <h4>Take 9 <small>5:41 · Suno v6</small></h4>
+          <p class="check"><b>✓ Clean</b> — every topic announced before and after its verses, in order; no skipped lines, no spoken passages. The final “Packet Ee” is sung but blurred under the closing chord — worth a listen at the very end.</p>
+          <div class="player">
+            <audio controls preload="none" src="candidates/packet-e-take9.m4a"></audio>
+            <a class="dl" href="candidates/packet-e-take9.m4a" download="Packet E - Grow in Christlikeness (take 9).m4a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download · 8.0 MB</a>
+          </div>
+        </div>
+        <div class="cand">
+          <div class="n">2</div>
+          <h4>Take 13 <small>5:25 · Suno v6</small></h4>
+          <p class="check"><b class="warn">◐ Near-clean</b> — 63 of 64 lines: the leading “Purity” title is skipped (the song goes straight from Humility's closing to “Ee Five and Ee Six”). Everything else, including both bookends, is present.</p>
+          <div class="player">
+            <audio controls preload="none" src="candidates/packet-e-take13.m4a"></audio>
+            <a class="dl" href="candidates/packet-e-take13.m4a" download="Packet E - Grow in Christlikeness (take 13).m4a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download · 7.6 MB</a>
+          </div>
+        </div>
+        <div class="cand pending">
+          <div class="n">3</div>
+          <h4>Third candidate <small>pending</small></h4>
+          <p class="check">Six other takes failed screening (skipped topic repeats or reference lines). Suno's monthly download quota refreshes 6 October; more takes will be screened then.</p>
+        </div>
       </div>
     </div>
   </article>

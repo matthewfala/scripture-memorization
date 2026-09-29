@@ -16,7 +16,7 @@ packet, plus a zip of all five.
 | Publish script | `tools/publish-official.sh` |
 | Bucket | `scripture-memorization-songs`, region `us-east-1`, account 381492251647 (IAM user `Admin`), public-read bucket policy, static website hosting on |
 | Public URL | http://scripture-memorization-songs.s3-website-us-east-1.amazonaws.com/ |
-| Object keys | `index.html`, `packet-<letter>.mp3`, `navigators-official-songs.zip` |
+| Object keys | `index.html`, `packet-<letter>.mp3`, `navigators-official-songs.zip`, `candidates/packet-<letter>-take<N>.m4a` (packets still being chosen; synced with `--delete`) |
 
 The bucket was created once (2026-09-02) with the human's explicit
 permission; the script never creates or reconfigures it. Object keys
@@ -89,3 +89,7 @@ across re-selection, exactly like the local path (Procedure 06).
 
 - II had claude build several s3 web demos. I like the first one still listed here: http://scripture-memorization-songs.s3-website-us-east-1.amazonaws.com
 - Can you delete the others and update the procedure.
+
+#### Document Modification On 2026-09-28
+
+- Can we switch back to packet a's format? I'd like to focus on packet E. Can you please make sure we have 3 clean samples if possible? Can you also update the website to display all three samples for packet e? I'll listen to those and tell you which I'd like to lock.

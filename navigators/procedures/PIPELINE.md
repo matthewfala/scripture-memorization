@@ -39,6 +39,10 @@ Procedure 00).
   `-backing-vocals.mp3` etc.), extracted via Suno Get Stems.
 - Officials: `navigators/official/packet-<letter>.mp3` — canonical,
   take-number-free, overwritten on re-selection (Procedure 06).
+- Candidates being chosen: `navigators/official/candidates/packet-<letter>-take<N>.m4a`
+  (Procedure 06).
+- Line verification: `navigators/songs/stems/verify-<stem>.md` plus its
+  `.words.json` word timeline (Procedure 04).
 - Landing page: `navigators/official/index.html`; S3 keys mirror `official/`
   filenames (Procedure 07).
 - Suno-side titles: `Packet <LETTER> - <Packet Title>`; workspace
@@ -85,3 +89,7 @@ reports include one naming the generating script.
 
 - Packet D, I like the sound, however there are portions that are spoken around 3:54 and 4:02 and 04:10 and 04:17 04:40. Is the automated detector able to be calibrated to detect this?
 - I'm pretty sure suno has this feature, you can download the spoken section without the music on the website?
+
+#### Document Modification On 2026-09-28
+
+- Can we switch back to packet a's format? I'd like to focus on packet E. Can you please make sure we have 3 clean samples if possible? Can you also update the website to display all three samples for packet e? I'll listen to those and tell you which I'd like to lock.

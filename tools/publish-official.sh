@@ -16,6 +16,10 @@ for f in "$SRC"/packet-*.mp3; do cp "$f" "$TMP/Scripture Songs/$(basename "$f")"
 
 aws s3 sync "$SRC" "s3://$BUCKET/" --region "$REGION" \
   --exclude '*' --include 'packet-*.mp3' --content-type audio/mpeg --cache-control 'public, max-age=300'
+if [ -d "$SRC/candidates" ]; then
+  aws s3 sync "$SRC/candidates" "s3://$BUCKET/candidates/" --region "$REGION" --delete \
+    --exclude '*' --include '*.m4a' --content-type audio/mp4 --cache-control 'public, max-age=300'
+fi
 aws s3 cp "$SRC/index.html" "s3://$BUCKET/index.html" --region "$REGION" \
   --content-type 'text/html; charset=utf-8' --cache-control 'public, max-age=60'
 aws s3 cp "$TMP/navigators-official-songs.zip" "s3://$BUCKET/navigators-official-songs.zip" --region "$REGION" \

@@ -32,6 +32,14 @@ B–E PROPOSED (pending sampling).
 | packet-e-take5.mp3 | E | 5:17 | v6 round 1, 2026-09-15; clip 17090669; **POOL CANDIDATE** — stem screen PASS (0.9% spoken) |
 | packet-e-take6.m4a | E | 5:28 | v6 round 1, 2026-09-15; clip d3900654; FAIL (7 missing lines incl. opening) |
 | packet-e-take7 | E | 5:14 | Sept 9 human-generated v6 take (clip 80cf869b), adopted as candidate; FAIL (WER 33.6%, missing lines); stems only |
+| packet-e-take8 | E | 5:23 | **v3 format**, v6, 2026-09-28; clip 7494e6b0; FAIL — trailing "Humility" and "Good Works" titles skipped; stems only |
+| packet-e-take9.m4a | E | 5:41 | **v3 format**, v6, 2026-09-28; clip 2119b700; **CANDIDATE 1 — CLEAN**: all topic announcements lead+trail in order, 0% spoken, both bookends sung (closing "Packet Ee" blurred at the fade) |
+| packet-e-take10 | E | 5:13 | v3, v6; clip d44a632f; FAIL — trailing "Faith" skipped, Honesty lead compressed; stems only |
+| packet-e-take11 | E | 5:19 | v3, v6; clip d37f9c24; FAIL — designators dropped throughout, trailing "Purity" skipped, ending truncated; stems only |
+| packet-e-take12 | E | 5:30 | v3, v6; clip 9c8f839f; FAIL — trailing "Love"/"Purity" skipped, leading John 13 reference dropped; stems only |
+| packet-e-take13.m4a | E | 5:25 | v3, v6; clip 58f139e1; **CANDIDATE 2 — NEAR-CLEAN**: 63/64, only the leading "Purity" title skipped; both bookends present |
+| packet-e-take14 | E | 5:26 | v3, v6; clip cead5f76; FAIL — six lines skipped between the Acts verse and the Faith verse; stems only |
+| packet-e-take15 | E | 5:38 | v3, v6; clip f52ed082; FAIL — sparse lead stem, topic sequence garbled; stems only |
 
 Screening reports (`screen-*.md`) are produced per Procedure 04.
 
@@ -66,6 +74,19 @@ on structural looseness. The remaining two (B 4:34/4:23, E 5:05)
 were left unscreened after that pattern. Suno's per-song download
 system (Pro quota, 27/month, refreshes 10/6) delivers m4a (~134 kbps
 AAC) or mp3 (64 kbps); ~8 downloads remain this month.
+
+## Packet E — v3 format candidates (2026-09-28)
+
+Packet E was converted to lyrics format v3 (Packet A's structure) and
+regenerated: 8 takes over two v6 rounds (v5.5 is no longer offered by
+Suno), each screened under the strict clean-sample standard (Procedure
+04: stem spoken screen, biased line verification, position-aware topic
+order check, bookend probe). Result: **take9 clean, take13 near-clean**
+(one leading title skipped); the other six skipped topic repeats or
+reference lines — v6 tends to compress the repeated short lines that v3
+adds. Both candidates are on the public site under "Choosing"; the third
+slot waits for Suno's download quota refresh (6 Oct; 1 download left).
+The earlier v2-format E takes (1–7) are superseded as candidates.
 
 ## Candidate pools (v6 series result, 2026-09-17)
 
@@ -148,3 +169,7 @@ and takes flagging materially above A's 3.7% remain suspect.
 #### Document Modification On 2026-09-15 (C locked, v6 regeneration series)
 
 - I have been listening to C so that one is now locked. Can we lock it? Can you regenerate D? Perhaps we can have 3 candidates (which pass) for each. Also I'd like to regenerate E & B. Please try out the new Suno v6 model. Also for the A packet, I can hear spoken slightly, but I'd still classify these as singing.
+
+#### Document Modification On 2026-09-28 (v3 format, Packet E candidates)
+
+- Can we switch back to packet a's format? I'd like to focus on packet E. Can you please make sure we have 3 clean samples if possible? Can you also update the website to display all three samples for packet e? I'll listen to those and tell you which I'd like to lock.
