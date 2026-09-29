@@ -1,8 +1,8 @@
 # Packet E — Grow in Christlikeness
 
-- Format: v2 (reference-placement: separate-line)
+- Format: v3 (reference-placement: separate-line)
 - Style status at generation: PROPOSED
-- Generated: 2026-09-02
+- Generated: 2026-09-02 (v2); converted to v3 2026-09-28
 
 ## Style
 
@@ -12,7 +12,6 @@ Sacred choral hymn - grand pipe organ beneath a full mixed choir carrying a clea
 
 Packet Ee
 Grow in Christlikeness
-
 Love
 Ee One and Ee Two
 John thirteen thirty-four to thirty-five.
@@ -21,7 +20,8 @@ John thirteen thirty-four to thirty-five.
 First John three eighteen.
 My little children, let us not love in word, neither in tongue; but in deed and in truth.
 First John three eighteen.
-
+Love
+Ee One and Ee Two
 Humility
 Ee Three and Ee Four
 Philippians two three to four.
@@ -30,7 +30,8 @@ Philippians two three to four.
 First Peter five five to six.
 Likewise, ye younger, submit yourselves unto the elder. Yea, all of you be subject one to another, and be clothed with humility: for God resisteth the proud, and giveth grace to the humble. Humble yourselves therefore under the mighty hand of God, that he may exalt you in due time:
 First Peter five five to six.
-
+Humility
+Ee Three and Ee Four
 Purity
 Ee Five and Ee Six
 Ephesians five three.
@@ -39,7 +40,8 @@ Ephesians five three.
 First Peter two eleven.
 Dearly beloved, I beseech you as strangers and pilgrims, abstain from fleshly lusts, which war against the soul;
 First Peter two eleven.
-
+Purity
+Ee Five and Ee Six
 Honesty
 Ee Seven and Ee Eight
 Leviticus nineteen eleven.
@@ -48,7 +50,8 @@ Leviticus nineteen eleven.
 Acts twenty-four sixteen.
 And herein do I exercise myself, to have always a conscience void of offence toward God, and toward men.
 Acts twenty-four sixteen.
-
+Honesty
+Ee Seven and Ee Eight
 Faith
 Ee Nine and Ee Ten
 Hebrews eleven six.
@@ -57,7 +60,8 @@ Hebrews eleven six.
 Romans four twenty to twenty-one.
 He staggered not at the promise of God through unbelief; but was strong in faith, giving glory to God; And being fully persuaded that, what he had promised, he was able also to perform.
 Romans four twenty to twenty-one.
-
+Faith
+Ee Nine and Ee Ten
 Good Works
 Ee Eleven and Ee Twelve
 Galatians six nine to ten.
@@ -66,6 +70,13 @@ Galatians six nine to ten.
 Matthew five sixteen.
 Let your light so shine before men, that they may see your good works, and glorify your Father which is in heaven.
 Matthew five sixteen.
-
+Good Works
+Ee Eleven and Ee Twelve
 Packet Ee
 Grow in Christlikeness
+
+## Human Prompts
+
+#### Document Modification On 2026-09-28
+
+- Can we switch back to packet a's format? I'd like to focus on packet E. Can you please make sure we have 3 clean samples if possible? Can you also update the website to display all three samples for packet e? I'll listen to those and tell you which I'd like to lock.

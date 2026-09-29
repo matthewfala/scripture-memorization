@@ -10,7 +10,11 @@ format they were memorized under, forever.
 ## Format versions
 
 - **v1** — Packet A (memorized; immutable; described below for the record).
-- **v2** — Packet B onward (current).
+- **v2** — Packets B–E, 2026-08-28 to 2026-09-28. Packet C is locked in
+  v2 and keeps it.
+- **v3** — current from 2026-09-28: the v1 structure restored for all
+  new generation (see "v3" below). Packet E converted first; B and D
+  convert when they are next regenerated.
 
 ### v1 (for the record)
 
@@ -51,6 +55,39 @@ Ay One and Ay Two
    first phrase on one line, sung in one breath) — to be tried only if
    sampling shows the separate-line references being styled badly or
    spoken. The variant in force is recorded in each generated file.
+
+### v3 (current) — v1 structure restored
+
+After partly memorizing both A (v1) and C (v2), the human preferred A's
+structure. v3 is v1 exactly, applied to any packet:
+
+1. **Topic announcements lead AND trail** each verse pair: topic name +
+   designators before the verses, and the same two lines repeated after
+   them. This supersedes v2 change 1; its "blur" concern did not hold up
+   in practice once verses were partly learned.
+2. Reference sandwich, packet bookends and separate-line references are
+   unchanged from v1/v2.
+3. **No blank lines between topics** — the lyrics are one continuous
+   block, as in Packet A's file.
+
+A v3 packet has 64 lyric lines (v2 had 52). Structure:
+
+```
+Packet Ee
+{Packet Name}
+{Topic 1 Name}
+Ee One and Ee Two
+{reference 1}. / {verse 1} / {reference 1}.
+{reference 2}. / {verse 2} / {reference 2}.
+{Topic 1 Name}
+Ee One and Ee Two
+{Topic 2 Name}
+...
+{Topic 6 Name}
+Ee Eleven and Ee Twelve
+Packet Ee
+{Packet Name}
+```
 
 ## Spoken-form rules
 
@@ -103,7 +140,7 @@ Packet Bee
 ```markdown
 # Packet B — {Packet Name}
 
-- Format: v2 (reference-placement: separate-line)
+- Format: v3 (reference-placement: separate-line)
 - Style status at generation: {status from styles.md}
 - Generated: {YYYY-MM-DD}
 
@@ -123,12 +160,13 @@ Packet Bee
    - `navigators/extracted/verses-kjv.md` has status `AGREE` (or a
      human-resolved text) for every verse of the packet.
 2. Build each spoken reference per the Spoken-form rules.
-3. Assemble the structure above, taking verse text **verbatim** from
+3. Assemble the current (v3) structure, taking verse text **verbatim** from
    `verses-kjv.md`.
 4. Apply the split rule if over 4,000 characters.
-5. Validate by script: every designator of the packet present exactly once;
-   each verse's text byte-identical to `verses-kjv.md`; every reference line
-   matches its designator's reference; topic announcements leading-only.
+5. Validate by script: each verse's text byte-identical to
+   `verses-kjv.md`; every reference line matches its designator's
+   reference; each topic announcement (name + designators) appears exactly
+   twice, immediately before and after its verse pair (v3).
 6. Write to `navigators/lyrics/`. Do not commit; the human reviews and
    samples the song in Suno.
 
@@ -141,3 +179,8 @@ Packet Bee
 - fully sung melodic vocals throughout, no spoken word - In my experience this doesn't actually change the outcome of the amount of spoken word so much as the genera of music does. It's hard for me to predict which genres are going to be spoken more. I can share feedback after listening to the music. If there was some automatic screening of the spoken word, perhaps that would be ideal - though if it uses cloud LLMs I'm thinking that would be costly and wasteful, and if not, I'm not sure a local model would be effective at detecting the spoken portions. for the format, I like the verse reference before and after the verse content since it does allow me to retrieve the verse ref from the text or the text from the verse ref (end and start), however I do find that having the topical title and the topic reference (a1) to often blur in memory, and I want to retrieve the verses under a topic but rather retrieve the next section because I jump to the end topical title rather than the start. In terms of the title, I think I like it at the start and end, however I'm not sure about this one. I think we should keep it at the start and end for now. I'm wondering if putting the verse reference on a separate line caused it to be it's own sentence of the song, and uniquely styled rather than on the same line (no new line character) and being sung in one breath. For KJV sources, I'm wondering what the most reputable sources would be? If those 3 are somewhat reputable, I'm okay with them Ideally we'd have those copied to the repository with some reference to the source. Ideally these sources need to be free of copyright restrictions. The procedure sounds generally good! Please weigh on whether to use Navigators or navigators (lower or upper case).
 - I'm okay with this. Let's go ahead
 - Please continue.
+
+#### Document Modification On 2026-09-28
+
+- After somewhat memorizing verses from both Packet A and C, I actually like Packet A's structure more than packet C. can you identify the structural differences
+- Can we switch back to packet a's format? I'd like to focus on packet E. Can you please make sure we have 3 clean samples if possible? Can you also update the website to display all three samples for packet e? I'll listen to those and tell you which I'd like to lock.
