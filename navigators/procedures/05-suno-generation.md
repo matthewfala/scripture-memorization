@@ -50,6 +50,10 @@ before Procedure 04 (screening).
    model, style short-name, round) and commit the mp3s together with the
    SONGS.md update.
 
+**Model quality (2026-10-03, human judgement):** v6 music is inferior to
+v5.5. Do not replace a v5.5 official or proposed official with a v6 take
+unless the human asks for it, even if the v6 take screens cleaner.
+
 ## Practical notes (2026-09-28)
 
 - **Lyrics entry**: the editor ignores synthetic newlines. Type each line
@@ -94,3 +98,7 @@ before Procedure 04 (screening).
 #### Document Modification On 2026-09-28
 
 - Can we switch back to packet a's format? I'd like to focus on packet E. Can you please make sure we have 3 clean samples if possible? Can you also update the website to display all three samples for packet e? I'll listen to those and tell you which I'd like to lock.
+
+#### Document Modification On 2026-10-03
+
+- Can you revert the websites proposed e to the prior one? v6 music on suno is inferior to 5.5 which is no longer available

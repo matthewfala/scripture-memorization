@@ -88,6 +88,12 @@ adds. Both candidates are on the public site under "Choosing"; the third
 slot waits for Suno's download quota refresh (6 Oct; 1 download left).
 The earlier v2-format E takes (1–7) are superseded as candidates.
 
+**Withdrawn 2026-10-03:** the human judged Suno v6's music inferior to
+v5.5 (no longer offered). Takes 9 and 13 were taken off the site; the
+website's Packet E is again the v5.5 **take3 PROPOSED OFFICIAL** (v2
+lyrics). The v3 lyrics file stays as the current format, but there is no
+v6 E recording to adopt.
+
 ## Candidate pools (v6 series result, 2026-09-17)
 
 - **D — pool complete, all stem-verified passers**: take3 (7.4%
@@ -173,3 +179,7 @@ and takes flagging materially above A's 3.7% remain suspect.
 #### Document Modification On 2026-09-28 (v3 format, Packet E candidates)
 
 - Can we switch back to packet a's format? I'd like to focus on packet E. Can you please make sure we have 3 clean samples if possible? Can you also update the website to display all three samples for packet e? I'll listen to those and tell you which I'd like to lock.
+
+#### Document Modification On 2026-10-03
+
+- Can you revert the websites proposed e to the prior one? v6 music on suno is inferior to 5.5 which is no longer available

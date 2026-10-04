@@ -19,6 +19,8 @@ aws s3 sync "$SRC" "s3://$BUCKET/" --region "$REGION" \
 if [ -d "$SRC/candidates" ]; then
   aws s3 sync "$SRC/candidates" "s3://$BUCKET/candidates/" --region "$REGION" --delete \
     --exclude '*' --include '*.m4a' --content-type audio/mp4 --cache-control 'public, max-age=300'
+else
+  aws s3 rm "s3://$BUCKET/candidates/" --recursive --region "$REGION"
 fi
 aws s3 cp "$SRC/index.html" "s3://$BUCKET/index.html" --region "$REGION" \
   --content-type 'text/html; charset=utf-8' --cache-control 'public, max-age=60'
